@@ -1,73 +1,85 @@
-# Den of the Draftsman — Static Portfolio Website
+# Den of the Draftsman — Open Studio, Study Log & Draftsman's Lexicon
 
-Custom-built, high-performance static website designed for technical illustration, isometric drawings, and traditional drafting portfolios. Hosted on GitHub Pages with zero external frameworks, libraries, or template licenses.
+Custom-built, high-performance static website for **Den of the Draftsman** (`denofthedraftsman.com`). Designed to document a 6-phase master curriculum in classical drawing, perspective, anatomy, ink rendering, industrial design, and precision drafting in public.
+
+Hosted on GitHub Pages with 100% bespoke, dependency-free vanilla HTML5, CSS3, and modern JavaScript.
 
 ---
 
 ## Features
 
-- **100% Bespoke Code**: Authored from scratch without third-party template snippets, dependencies, or attribution requirements.
-- **Drafting Slate Theme**: Deep drafting aesthetic with blueprint accents, responsive typography, and mobile-friendly layouts.
-- **Fixed Navigation Bar**: Docked at the bottom on desktop and at the top on mobile. Includes your exact YouTube, Twitch, Twitter/X, Instagram, and Patreon links.
-- **Under Construction Screen**: A clean status card featuring a drafting compass badge, live stream callouts, and social links while artwork is being drafted.
-- **Built-in Lightbox**: Vanilla JavaScript modal supporting full-res inspection, caption details, keyboard navigation (Left/Right/Escape), and mobile touch swipe gestures.
-- **Slide-out About Drawer**: Accessible panel featuring your artist statement, social connections, and an inquiry/commission form.
+- **Open Studio Station & Hero**: Active drafting board status card showing your current book milestone (*Perspective Made Easy* by Ernest R. Norling), active exercises, and live stream callouts (Twitch, YouTube, Patreon).
+- **Interactive 6-Phase Curriculum**: Fully sequenced roadmap containing all 22 books with phase badges, sequence numbers, "Why this text" rationales, and real-time phase filter buttons.
+- **Study Plates & Exercise Gallery**: Responsive grid displaying your drawing plates and master studies, connected to a built-in full-screen vanilla JS lightbox with keyboard (Left/Right/Esc) and mobile swipe navigation.
+- **The Draftsman's Lexicon (`dictionary.html`)**: A dedicated dictionary page featuring 40+ foundational terms across perspective, light physics, anatomy, composition/Notan, inking, markers, and precision drafting. Includes real-time instant search, category filter pills, A–Z jump bar, and drafting application notes.
+- **Drafting Slate Aesthetic**: Custom dark drafting theme (`#15181b`) with blueprint grid lines, turquoise accents (`#2dd4bf`), responsive typography, and mobile-friendly bottom/top navigation bar.
+- **Slide-out About Drawer**: Accessible slide-out panel with artist statement, social connections, and direct inquiry form.
 
 ---
 
-## Project Structure
+## Site Structure
 
 ```
-html5up-multiverse/
-├── index.html        # Main HTML5 document
+denofthedraftsman.github.io/
+├── index.html          # Main Open Studio, Curriculum Roadmap & Study Plates
+├── dictionary.html     # The Draftsman's Lexicon (Interactive Dictionary)
+├── CNAME               # Custom domain (denofthedraftsman.com)
 ├── css/
-│   └── style.css     # Bespoke CSS styles & responsive layouts
+│   └── style.css       # Bespoke responsive stylesheet & drafting theme
 ├── js/
-│   └── app.js        # Vanilla JS for lightbox, drawer panel, and forms
+│   └── app.js          # Vanilla JS: Lightbox, drawer, filters, lexicon search
 ├── images/
-│   ├── fulls/        # High-resolution artwork scans
-│   └── thumbs/       # Cropped gallery thumbnails
-└── README.md         # Documentation
+│   ├── fulls/          # High-resolution plate scans (SVG / JPG / PNG)
+│   └── thumbs/         # Plate thumbnail crops
+└── README.md           # Documentation & guides
 ```
 
 ---
 
-## How to Add Artwork to the Gallery
+## How to Add New Scanned Plates
 
-When you have scanned drawings or illustrations ready to display:
+When you complete a new study sheet or finished drawing:
 
-1. Save your full-size image scan into `images/fulls/` (e.g. `01.jpg`).
-2. Save your thumbnail crop into `images/thumbs/` (e.g. `01.jpg`).
-3. In `index.html`:
-   - Remove or comment out the `<section class="under-construction">` block.
-   - Uncomment the `<section class="gallery-grid" id="gallery-grid">` block and add your card:
+1. Save your full-size image scan into `images/fulls/` (e.g. `plate-04.jpg` or `.png`).
+2. Save your thumbnail crop into `images/thumbs/` (e.g. `plate-04.jpg`).
+3. In `index.html`, add a `<article class="gallery-card">` entry under `#gallery-grid`:
 
 ```html
-<article class="gallery-card" data-full="images/fulls/01.jpg" data-title="Orthographic Assembly" data-desc="Ink on vellum, 18x24 in. (2026)">
-  <img src="images/thumbs/01.jpg" alt="Orthographic Assembly" loading="lazy" />
+<article class="gallery-card" data-full="images/fulls/plate-04.jpg" data-title="Plate 04: Harold Speed Sight-Size Study" data-desc="Charcoal on Strathmore 500, 18x24 in. (2026).">
+  <span class="gallery-plate-badge">Plate 04 // Phase 1</span>
+  <img src="images/thumbs/plate-04.jpg" alt="Plate 04: Harold Speed Sight-Size Study" loading="lazy" />
   <div class="gallery-overlay">
-    <h2 class="gallery-item-title">Orthographic Assembly</h2>
-    <p class="gallery-item-desc">Ink on vellum, 18x24 in. (2026)</p>
+    <h3 class="gallery-item-title">Harold Speed Sight-Size Study</h3>
+    <p class="gallery-item-desc">Plumb lines, horizontal sighting levels, and contour proportions.</p>
   </div>
 </article>
 ```
 
-The lightbox will automatically detect each `.gallery-card`, open the full image on click, display the title and description, and enable arrow-key/swipe navigation.
-
 ---
 
-## Publishing to GitHub Pages
+## How to Add New Definitions to the Lexicon
 
-1. Create a repository on [GitHub](https://github.com) named `<your-username>.github.io`.
-2. In Terminal:
-   ```bash
-   cd /Users/home_folder/Downloads/html5up-multiverse
-   git init
-   git add .
-   git commit -m "Initial launch: Den of the Draftsman"
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/<your-username>.github.io.git
-   git push -u origin main
-   ```
-3. In GitHub, go to **Settings** &rarr; **Pages**, set **Source** to `Deploy from a branch` (`main` / `/ (root)`), and click **Save**.
-4. Your site will be live at `https://<your-username>.github.io`.
+In `dictionary.html`, duplicate an `<article class="term-card">` block under `#lexicon-grid`:
+
+```html
+<article class="term-card" data-term="Your Term Name" data-category="perspective">
+  <div>
+    <div class="term-header">
+      <h3 class="term-name">Your Term Name</h3>
+      <span class="term-category-badge">Perspective &amp; Space</span>
+    </div>
+    <p class="term-definition">
+      The theoretical definition explaining the geometric or physical principle.
+    </p>
+    <div class="term-drafting-note">
+      <span class="term-note-label">Drafting Application</span>
+      Tactile tip on how to construct or render this on the drawing board.
+    </div>
+  </div>
+  <div class="term-footer">
+    <span class="term-source">Core Text: <span>Author or Book Reference</span></span>
+  </div>
+</article>
+```
+
+Categories available: `perspective`, `light-value`, `composition`, `anatomy`, `inking`, `markers`, `drafting`. The real-time search, counter, and category pills will automatically recognize and index the new entry.

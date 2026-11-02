@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Draftsman's Lexicon &mdash; Den of the Draftsman</title>
+  <meta name="description" content="A comprehensive reference dictionary of traditional drafting definitions, classical perspective principles, light physics, anatomy, ink rendering, and industrial design mechanics." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ======================================================================
+       Site Header & Fixed Navigation Bar
+       ====================================================================== -->
+  <header id="site-header">
+    <div class="brand-wrapper">
+      <a href="index.html" class="brand-title">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2a2 2 0 0 0-2 2c0 .38.11.74.3 1.05L4.5 19.5a1 1 0 0 0 1.8.88L9.2 13h5.6l2.9 7.38a1 1 0 0 0 1.8-.88L13.7 5.05c.19-.31.3-.67.3-1.05a2 2 0 0 0-2-2zm0 2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 7 2-5.08 2 5.08h-4z"/>
+        </svg>
+        Den of the Draftsman
+      </a>
+      <span class="brand-tagline">&mdash; Open Studio &amp; Traditional Drafting</span>
+    </div>
+
+    <nav aria-label="Main Navigation">
+      <ul class="nav-menu">
+        <li>
+          <a href="index.html#studio" class="nav-link">Studio</a>
+        </li>
+        <li>
+          <a href="index.html#curriculum" class="nav-link">Curriculum</a>
+        </li>
+        <li>
+          <a href="index.html#plates" class="nav-link">Plates</a>
+        </li>
+        <li>
+          <a href="dictionary.html" class="nav-link active">Lexicon</a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/@denofthedraftsman" target="_blank" rel="noopener noreferrer" class="nav-link icon-only" title="YouTube" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.376.55 9.376.55s7.505 0 9.377-.55a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.twitch.tv/denofthedraftsman" target="_blank" rel="noopener noreferrer" class="nav-link icon-only" title="Twitch" aria-label="Twitch">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://x.com/denofdraftsman" target="_blank" rel="noopener noreferrer" class="nav-link icon-only" title="Twitter / X" aria-label="Twitter / X">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/denofthedraftsman" target="_blank" rel="noopener noreferrer" class="nav-link icon-only" title="Instagram" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.patreon.com/profile/creators?u=231767646" target="_blank" rel="noopener noreferrer" class="nav-link icon-only" title="Patreon" aria-label="Patreon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.386.5C9.645.5 5 5.146 5 10.887c0 5.688 4.645 10.334 10.386 10.334 5.688 0 10.334-4.646 10.334-10.334C25.72 5.146 21.074.5 15.386.5zM0 23.5h4.15V.5H0z"/></svg>
+          </a>
+        </li>
+        <li>
+          <button type="button" id="drawer-toggle" class="nav-btn" aria-expanded="false" aria-controls="drawer-panel">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            About
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ======================================================================
+       Main Content Area: The Draftsman's Lexicon
+       ====================================================================== -->
+  <main id="main-content">
+    <div class="lexicon-page">
+      <div class="container">
+
+        <!-- Page Header -->
+        <div class="section-header">
+          <span class="section-tag">Reference Lexicon</span>
+          <h1 class="section-title">The Draftsman's Lexicon</h1>
+          <p class="section-desc">
+            An evolving, authoritative reference of foundational definitions, geometric projection laws, light physics, and tactile rendering mechanics collected across our 6-phase master curriculum.
+          </p>
+        </div>
+
+        <!-- Interactive Toolbar: Search & Category Filters -->
+        <div class="lexicon-toolbar">
+          
+          <!-- Real-time Search Box -->
+          <div class="search-box-wrapper">
+            <input type="text" id="lexicon-search" class="search-input" placeholder="Search definitions by term, keyword, or text reference..." autocomplete="off" />
+            <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true">
+              <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+            <button type="button" id="search-clear" class="search-clear-btn" aria-label="Clear search">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+          </div>
+
+          <!-- Category Filter Pills & Counter -->
+          <div class="lexicon-filter-row">
+            <div class="category-pills" id="category-pills">
+              <button type="button" class="cat-pill active" data-category="all">All Disciplines</button>
+              <button type="button" class="cat-pill" data-category="perspective">Perspective &amp; Space</button>
+              <button type="button" class="cat-pill" data-category="light-value">Light &amp; Value</button>
+              <button type="button" class="cat-pill" data-category="composition">Composition &amp; Notan</button>
+              <button type="button" class="cat-pill" data-category="anatomy">Anatomy &amp; Form</button>
+              <button type="button" class="cat-pill" data-category="inking">Pen &amp; Ink</button>
+              <button type="button" class="cat-pill" data-category="markers">Markers &amp; ID</button>
+              <button type="button" class="cat-pill" data-category="drafting">Precision Drafting</button>
+            </div>
+
+            <div class="lexicon-counter" id="lexicon-count">
+              Showing 42 of 42 terms
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Alphabetical Quick-Jump Strip -->
+        <nav class="alpha-jump-bar" aria-label="Alphabetical Jump">
+          <button type="button" class="alpha-btn active" data-letter="all">ALL</button>
+          <button type="button" class="alpha-btn" data-letter="A">A</button>
+          <button type="button" class="alpha-btn" data-letter="B">B</button>
+          <button type="button" class="alpha-btn" data-letter="C">C</button>
+          <button type="button" class="alpha-btn" data-letter="D">D</button>
+          <button type="button" class="alpha-btn" data-letter="E">E</button>
+          <button type="button" class="alpha-btn" data-letter="F">F</button>
+          <button type="button" class="alpha-btn" data-letter="G">G</button>
+          <button type="button" class="alpha-btn" data-letter="H">H</button>
+          <button type="button" class="alpha-btn" data-letter="I">I</button>
+          <button type="button" class="alpha-btn" data-letter="J">J</button>
+          <button type="button" class="alpha-btn" data-letter="K">K</button>
+          <button type="button" class="alpha-btn" data-letter="L">L</button>
+          <button type="button" class="alpha-btn" data-letter="M">M</button>
+          <button type="button" class="alpha-btn" data-letter="N">N</button>
+          <button type="button" class="alpha-btn" data-letter="O">O</button>
+          <button type="button" class="alpha-btn" data-letter="P">P</button>
+          <button type="button" class="alpha-btn" data-letter="Q">Q</button>
+          <button type="button" class="alpha-btn" data-letter="R">R</button>
+          <button type="button" class="alpha-btn" data-letter="S">S</button>
+          <button type="button" class="alpha-btn" data-letter="T">T</button>
+          <button type="button" class="alpha-btn" data-letter="U">U</button>
+          <button type="button" class="alpha-btn" data-letter="V">V</button>
+          <button type="button" class="alpha-btn" data-letter="W">W</button>
+          <button type="button" class="alpha-btn" data-letter="X">X</button>
+          <button type="button" class="alpha-btn" data-letter="Y">Y</button>
+          <button type="button" class="alpha-btn" data-letter="Z">Z</button>
+        </nav>
+
+        <!-- ==============================================================
+             Dictionary Term Cards Grid
+             HOW TO ADD NEW TERMS:
+             Duplicate any <article class="term-card"> block below, set
+             data-term="Your Term", data-category="category-key", and fill
+             in the definition, practical drafting note, and reference text.
+             ============================================================== -->
+        <div class="lexicon-grid" id="lexicon-grid">
+
+          <!-- A -->
+          <article class="term-card" data-term="Ambient Occlusion" data-category="light-value">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Ambient Occlusion</h3>
+                <span class="term-category-badge">Light &amp; Value</span>
+              </div>
+              <p class="term-definition">
+                The deep, localized darkening that occurs where surfaces meet, crease, or press closely together, preventing diffuse ambient environmental light from penetrating. It establishes contact, ground plane anchoring, and micro-depth independently of direct directional sunlight.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Place a tight, intense dark line directly under the wheels of vehicles, at the contact base of cubes on a table, or between overlapping finger joints to ground the subject firmly in space.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>How to Render (Robertson) &amp; Cross</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Auxiliary View" data-category="drafting">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Auxiliary View</h3>
+                <span class="term-category-badge">Precision Drafting</span>
+              </div>
+              <p class="term-definition">
+                An orthographic view projected onto an inclined plane not parallel to any of the principal planes of projection (horizontal, frontal, or profile). It is constructed specifically to reveal the true size, true shape, and true angular relationships of an inclined or oblique surface.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                When drafting machine parts or beveled flanges with inclined features, construct a reference line parallel to the inclined edge and project 90° lines outward to draw the true face.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Technical Drawing 7th Ed. (Giesecke et al.)</span></span>
+            </div>
+          </article>
+
+          <!-- B -->
+          <article class="term-card" data-term="Ball-and-Plane Method" data-category="anatomy">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Ball-and-Plane Method</h3>
+                <span class="term-category-badge">Anatomy &amp; Form</span>
+              </div>
+              <p class="term-definition">
+                The foundational structural system developed by Andrew Loomis where the human cranium is established as a spherical ball flattened on the sides to form temporal planes, intersected by a brow line and central vertical facial axis.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Allows the draftsman to pivot, pitch, tilt, and yaw the human head reliably at extreme angles before hanging features like eyes, nose, or ears on the framework.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Drawing the Head and Hands (Andrew Loomis)</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Bony Landmark" data-category="anatomy">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Bony Landmark</h3>
+                <span class="term-category-badge">Anatomy &amp; Form</span>
+              </div>
+              <p class="term-definition">
+                Points on the skeletal system where bone lies directly beneath the subcutaneous tissue without muscular coverage (e.g., clavicles, acromion process, sternum, anterior superior iliac spine, ulna at the elbow, patella).
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Use bony landmarks as unchanging anchor points for sighting plumb lines, checking tilt angles, and measuring proportions, because muscle masses flex and deform while bone points remain fixed.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>The Human Figure (Vanderpoel) &amp; Bridgman</span></span>
+            </div>
+          </article>
+
+          <!-- C -->
+          <article class="term-card" data-term="Cast Shadow" data-category="light-value">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Cast Shadow</h3>
+                <span class="term-category-badge">Light &amp; Value</span>
+              </div>
+              <p class="term-definition">
+                The negative silhouette of an object projected onto a neighboring surface or ground plane where the direct path of illumination is completely blocked. It features sharp, crisp boundaries near the contact origin that soften into a penumbra as distance from the caster increases.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Determine cast shadow edges geometrically by projecting rays from the light source through the object's vertices down to the ground horizon vanishing points.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Light and Shade (Anson K. Cross)</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Cone of Vision" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Cone of Vision</h3>
+                <span class="term-category-badge">Perspective &amp; Space</span>
+              </div>
+              <p class="term-definition">
+                The imaginary 60-degree cone originating from the observer's eye (station point) toward the center of vision. Objects drawn inside this 60° boundary appear natural to human perception; objects constructed outside suffer severe wide-angle distortion, elongation, and unnatural warping.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Always keep your primary subject and key mechanical details within a 60° circle centered on your eye-level line to prevent perspective distortion.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Perspective Made Easy (Norling) &amp; Robertson</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Conventionalization" data-category="composition">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Conventionalization</h3>
+                <span class="term-category-badge">Composition &amp; Notan</span>
+              </div>
+              <p class="term-definition">
+                The artistic process of simplifying, formalizing, and translating natural, irregular organic forms (leaves, flowers, vines, animal forms) into stylized geometric or decorative patterns suitable for border bands, architectural friezes, and repeatable motifs.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Strip accidental natural defects from foliage studies and extract the underlying rhythm, symmetry, and repeating geometric curve before applying to title blocks or architectural borders.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Elements of Ornament (I.C.S. Reference Library)</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Core Shadow (Terminator)" data-category="light-value">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Core Shadow (Terminator)</h3>
+                <span class="term-category-badge">Light &amp; Value</span>
+              </div>
+              <p class="term-definition">
+                The darkest crest on the shadowed side of a curved surface where direct light rays become exactly tangent to the form and reflected ambient light has not yet hit. It is the defining line that separates the lit hemisphere from the shadow hemisphere.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Never run your darkest graphite tone all the way to the outer contour edge of a cylinder or sphere; leave room for reflected light beyond the core shadow to convey cylindrical volume.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Light and Shade (Anson K. Cross)</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Cross-Hatching" data-category="inking">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Cross-Hatching</h3>
+                <span class="term-category-badge">Pen &amp; Ink</span>
+              </div>
+              <p class="term-definition">
+                A foundational rendering technique where tonal values and surface textures are built by layering intersecting series of parallel pen lines at deliberate, oblique angles (typically 30° to 45°, rarely perpendicular right angles).
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Curve hatching strokes along the cross-contour of 3D forms rather than laying them flat, and avoid 90° checkerboards which flatten the drawing and distract the eye.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Rendering in Pen and Ink (Arthur L. Guptill)</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Cutaway View" data-category="drafting">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Cutaway View</h3>
+                <span class="term-category-badge">Precision Drafting</span>
+              </div>
+              <p class="term-definition">
+                A technical illustration method where portions of an exterior housing, hull, or chassis are geometrically excised along orthogonal planes to expose interior mechanical components, gears, fluid channels, or structural ribs in their operating positions.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Use stepped sectional cuts with distinct cross-hatch angles on mating parts to distinguish solid wall thickness from interior clearances.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>How to Draw (Robertson) &amp; Machine Drawing</span></span>
+            </div>
+          </article>
+
+          <!-- D -->
+          <article class="term-card" data-term="Dimensioning" data-category="drafting">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Dimensioning</h3>
+                <span class="term-category-badge">Precision Drafting</span>
+              </div>
+              <p class="term-definition">
+                The standardized engineering practice of inscribing numerical values, dimension lines, extension lines, arrowheads, and tolerances onto a drawing to specify the exact physical size, location, and geometric constraints of each feature.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Always dimension between visible, finished surfaces; leave a clean 1.5mm gap between the object boundary and extension lines; never cross dimension lines with other leaders.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Technical Drawing (Giesecke) &amp; Narayana</span></span>
+            </div>
+          </article>
+
+          <!-- E -->
+          <article class="term-card" data-term="Economy of Line" data-category="inking">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Economy of Line</h3>
+                <span class="term-category-badge">Pen &amp; Ink</span>
+              </div>
+              <p class="term-definition">
+                The master principle of pen drawing where the minimum necessary number of strokes is used to express maximum form, light, and texture, omitting redundant hatching in favor of decisive, deliberate linework.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Allow the white paper to carry the highlight and half-tone areas; let one crisp contour line do the work of twenty scratchy, hesitant searching lines.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Pen Drawing (Charles D. Maginnis)</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Ellipse Minor Axis" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Ellipse Minor Axis</h3>
+                <span class="term-category-badge">Perspective &amp; Space</span>
+              </div>
+              <p class="term-definition">
+                The shortest diameter of an ellipse representing a circle viewed in perspective. In 3D space, the minor axis always aligns collinear with the axle or cylindrical centerline perpendicular to the circle's plane, regardless of the angle of view.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                When drawing vehicle wheels, cylindrical shafts, or cup rims, construct the axle line first; your ellipse minor axis MUST lay along that centerline or the wheel will wobble.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>How to Draw (Robertson) &amp; Eissen &amp; Steur</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Eye Level (Horizon Line)" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Eye Level (Horizon Line)</h3>
+                <span class="term-category-badge">Perspective &amp; Space</span>
+              </div>
+              <p class="term-definition">
+                The imaginary horizontal plane corresponding to the exact vertical height of the draftsman's pupils. In visual space, it is represented as a single horizontal line across the drawing surface where the earth and sky appear to meet at infinity.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Surfaces below eye level reveal their top faces; surfaces above eye level reveal their undersides; surfaces resting directly on eye level collapse into a flat single edge.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Perspective Made Easy (Ernest R. Norling)</span></span>
+            </div>
+          </article>
+
+          <!-- F -->
+          <article class="term-card" data-term="Feather Touch" data-category="markers">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Feather Touch</h3>
+                <span class="term-category-badge">Markers &amp; ID</span>
+              </div>
+              <p class="term-definition">
+                A tactile alcohol marker stroke technique where the chisel or brush nib touches the paper on the move, accelerates across the stroke, and lifts off before stopping, preventing ink puddling at the turnaround points.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Use a feather stroke for seamless gradient transitions on cylindrical metallic reflections, blending lighter values into pure white paper highlights without hard watermarks.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Rendering with Markers (Ronald B. Kemnitzer)</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Fresnel Effect" data-category="markers">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Fresnel Effect</h3>
+                <span class="term-category-badge">Markers &amp; ID</span>
+              </div>
+              <p class="term-definition">
+                The optical behavior where the reflectivity of a dielectric material (plastic, glass, water, car clearcoat) increases dramatically as the viewer's angle of incidence grazes the surface tangentially, while appearing less reflective when viewed perpendicular.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Render car hoods and curved industrial products with deeper local color facing the viewer, but brighten reflections to pure light along the grazing silhouette contours.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>How to Render (Scott Robertson)</span></span>
+            </div>
+          </article>
+
+          <!-- G -->
+          <article class="term-card" data-term="Graduated Value Scale" data-category="light-value">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Graduated Value Scale</h3>
+                <span class="term-category-badge">Light &amp; Value</span>
+              </div>
+              <p class="term-definition">
+                A step-by-step ladder of distinct, uniform tonal steps (typically 5 to 9 values) ranging from paper white (Value 1) to maximum graphite/ink black (Value 9), used to calibrate tonal perception and ensure full dynamic range.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Draft a 9-step value strip on test paper before starting any major rendering to establish your key light, half-light, core shadow, and deepest ambient occlusion marks.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Sketching &amp; Rendering in Pencil (Guptill) &amp; Cross</span></span>
+            </div>
+          </article>
+
+          <!-- H -->
+          <article class="term-card" data-term="Half-Light (Halftone)" data-category="light-value">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Half-Light (Halftone)</h3>
+                <span class="term-category-badge">Light &amp; Value</span>
+              </div>
+              <p class="term-definition">
+                The illuminated zone on a form where light strikes at an oblique angle between 1° and 89°, carrying the true local color and texture of the material. It darkens progressively as the angle of the surface turns away from the light source.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Reserve all surface textures (skin pores, wood grain, fabric weaves, stone pitting) for the half-light; highlights blow out detail and shadows obscure it.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Light and Shade (Anson K. Cross)</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Highlight (Specular)" data-category="light-value">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Highlight (Specular)</h3>
+                <span class="term-category-badge">Light &amp; Value</span>
+              </div>
+              <p class="term-definition">
+                The virtual reflection of the light source itself off a glossy or semi-glossy surface. Its position is viewpoint-dependent: unlike the core shadow which remains static on the object, the highlight moves across the form as the draftsman moves their point of view.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Keep highlights pure untouched white paper or add them with gouache/gel pens at the end; on matte surfaces, soften highlight boundaries; on chrome, keep them razor sharp.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Light and Shade (Cross) &amp; How to Render</span></span>
+            </div>
+          </article>
+
+          <!-- I -->
+          <article class="term-card" data-term="Inclined Plane" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Inclined Plane</h3>
+                <span class="term-category-badge">Perspective &amp; Space</span>
+              </div>
+              <p class="term-definition">
+                Any flat plane tilted up or down relative to the horizontal ground plane (e.g., ramps, pitched roofs, open box flaps, staircases). Inclined lines vanish to special vanishing points located directly above or below the vanishing point of their horizontal base.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                To draw a gabled roof or open lid, erect a vertical trace directly above the roof wall's horizontal VP on the horizon line to find the inclined vanishing point (VP-Up).
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Perspective Made Easy (Ernest R. Norling)</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Isometric Projection" data-category="drafting">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Isometric Projection</h3>
+                <span class="term-category-badge">Precision Drafting</span>
+              </div>
+              <p class="term-definition">
+                An axonometric projection where the three coordinate axes (X, Y, Z) are spaced equally at 120 degrees apart, with the two horizontal receding axes drawn at 30 degrees to the baseline. All isometric lines are drawn to exact scale without perspective foreshortening.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Ideal for mechanical exploded assemblies and technical user manuals because measurements can be transferred directly with dividers along any of the three 30°/90° axes.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Technical Drawing (Giesecke) &amp; Cross</span></span>
+            </div>
+          </article>
+
+          <!-- L -->
+          <article class="term-card" data-term="Line Hierarchy" data-category="inking">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Line Hierarchy</h3>
+                <span class="term-category-badge">Pen &amp; Ink</span>
+              </div>
+              <p class="term-definition">
+                The systematic variation of line thickness used to establish depth, priority, and object boundaries. Heavy lines define outer silhouettes against empty space; medium lines define internal form boundaries; hairline weights indicate surface transitions, construction grids, and texture.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Use a thick 0.5–0.8mm technical fineliner for the perimeter profile, 0.3mm for major internal edges, and 0.05–0.1mm for hatch tones and interior section lines.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Line and Form (Walter Crane) &amp; Eissen</span></span>
+            </div>
+          </article>
+
+          <!-- M -->
+          <article class="term-card" data-term="Mannikin Frame" data-category="anatomy">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Mannikin Frame</h3>
+                <span class="term-category-badge">Anatomy &amp; Form</span>
+              </div>
+              <p class="term-definition">
+                A simplified 3D geometric armature consisting of wooden-jointed blocks (pelvis box, ribcage egg, cylindrical limbs, and ball joints) proportioned to 7.5 or 8 head heights, used to establish dynamic posture, foreshortening, and balance before anatomical muscles are draped.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Always check that the pit of the neck sits over the supporting foot in standing poses to ensure dynamic equilibrium before rendering surface musculature.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Figure Drawing for All It's Worth (Andrew Loomis)</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Mass vs. Line" data-category="composition">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Mass vs. Line</h3>
+                <span class="term-category-badge">Composition &amp; Notan</span>
+              </div>
+              <p class="term-definition">
+                The dual modes of visual representation analyzed by Harold Speed: line drawing (the academic, intellectual analysis of boundaries and contours) versus mass drawing (the perceptual unity of silhouette shapes, tonal weight, and light pools).
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Squint at your subject to eliminate fine line details and see only big dark-versus-light mass silhouettes before laying down precise structural boundary outlines.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>The Practice and Science of Drawing (Harold Speed)</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Measuring Point (MP)" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Measuring Point (MP)</h3>
+                <span class="term-category-badge">Perspective &amp; Space</span>
+              </div>
+              <p class="term-definition">
+                A specialized vanishing point constructed on the horizon line used to measure true metric depths along foreshortened receding perspective lines without guesswork, by using an isosceles triangle projection from the ground measuring line.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Swing an arc from the station point to the horizon line with a drafting compass centered on the vanishing point to locate the exact measuring point for that receding wall.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Perspective Made Easy (Norling) &amp; Robertson</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Multiview Orthographic Projection" data-category="drafting">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Multiview Orthographic Projection</h3>
+                <span class="term-category-badge">Precision Drafting</span>
+              </div>
+              <p class="term-definition">
+                The standard engineering representation system where a 3D object is projected perpendicular onto mutually perpendicular glass projection planes, producing aligned Front, Top, and Right Side views to display true dimensional geometry without perspective foreshortening.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Align the top view vertically above the front view; use a 45° miter line in the upper right quadrant to project depth dimensions effortlessly into the right side view.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Mechanical Drawing (Cross) &amp; Technical Drawing</span></span>
+            </div>
+          </article>
+
+          <!-- N -->
+          <article class="term-card" data-term="Notan" data-category="composition">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Notan</h3>
+                <span class="term-category-badge">Composition &amp; Notan</span>
+              </div>
+              <p class="term-definition">
+                The Japanese concept of dark-and-light balance in design. Notan ignores physical light physics, gradients, and shadows to treat the picture plane as an interlocking harmony of flat positive shapes and flat negative spaces.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Create 2-inch black-and-white thumbnail studies of your composition; if the flat black and white shapes do not form an exciting, balanced abstract design, no amount of detailed shading will save it.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Composition (Arthur Wesley Dow)</span></span>
+            </div>
+          </article>
+
+          <!-- O -->
+          <article class="term-card" data-term="Opposition" data-category="composition">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Opposition</h3>
+                <span class="term-category-badge">Composition &amp; Notan</span>
+              </div>
+              <p class="term-definition">
+                One of Dow's five fundamental principles of space-art, defined by two lines or value masses meeting at an angle (typically a perpendicular 90° or severe diagonal counter-thrust), creating structural stability, strength, and focal arrest.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Place vertical architectural columns opposing horizontal base plinths, or rigid mechanical chassis lines cutting across organic curves to anchor dynamic compositions.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Composition (Arthur Wesley Dow)</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Overpass Line" data-category="markers">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Overpass Line</h3>
+                <span class="term-category-badge">Markers &amp; ID</span>
+              </div>
+              <p class="term-definition">
+                A rapid industrial design fineliner technique where stroke endpoints are allowed to deliberately shoot slightly past corner intersections rather than stopping short or forming hooked ends.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Let lines overlap by 1–2mm at box corners; it lends energy and structural crispness to freehand perspective sketches while preventing timid, wavy corner hesitation.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Sketching - The Basics (Eissen &amp; Steur)</span></span>
+            </div>
+          </article>
+
+          <!-- P -->
+          <article class="term-card" data-term="Picture Plane" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Picture Plane</h3>
+                <span class="term-category-badge">Perspective &amp; Space</span>
+              </div>
+              <p class="term-definition">
+                The transparent vertical plane positioned between the eye of the observer and the 3D scene being viewed, upon which the visual rays converge. The physical paper, vellum sheet, or canvas corresponds directly to this picture plane.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Lines on the object that run parallel to the picture plane never converge in 2-point perspective; only lines receding into the picture plane converge to vanishing points.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Perspective Made Easy (Norling) &amp; Ruskin</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Planes of the Head" data-category="anatomy">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Planes of the Head</h3>
+                <span class="term-category-badge">Anatomy &amp; Form</span>
+              </div>
+              <p class="term-definition">
+                The geometric simplification of the curved organic human face into flat planar facets (e.g., forehead front plane, temporal side planes, nasal keystone, under-brow plane, cheek plane, dental arch cylinder, chin box).
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Assign a consistent tone to each plane according to its angle relative to the key light source; this ensures the portrait looks like carved solid sculpture rather than a flat mask.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Drawing the Head and Hands (Loomis) &amp; Vanderpoel</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Plumb Line" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Plumb Line</h3>
+                <span class="term-category-badge">Perspective &amp; Space</span>
+              </div>
+              <p class="term-definition">
+                A true vertical reference line established by gravity (or a held pencil at arm's length) used to sight, align, and compare the relative horizontal positions of points on a 3D model or natural landscape.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Hold your pen vertical against your eye and sight what lies directly under the tear duct of a portrait or the front corner of a building to verify posture tilt.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>The Practice and Science of Drawing (Harold Speed)</span></span>
+            </div>
+          </article>
+
+          <!-- R -->
+          <article class="term-card" data-term="Reflected Light" data-category="light-value">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Reflected Light</h3>
+                <span class="term-category-badge">Light &amp; Value</span>
+              </div>
+              <p class="term-definition">
+                Light that bounces from neighboring illuminated planes (such as a light tabletop or adjacent wall) into the shadow side of an object. It softens shadows and reveals form contours inside the dark zone.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Crucial rule: Reflected light inside a shadow is NEVER brighter than the darkest half-light in the direct illumination zone. Keep it subdued so it stays within the shadow family.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Light and Shade (Anson K. Cross)</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Repetition" data-category="composition">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Repetition</h3>
+                <span class="term-category-badge">Composition &amp; Notan</span>
+              </div>
+              <p class="term-definition">
+                One of Dow's five composition principles: the rhythmic recurrence of similar line angles, spatial intervals, or geometric shapes throughout the page, providing cadence, order, and visual harmony.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Echo the angle of a major mechanical beam in smaller background elements or repeating structural bolts to tie disparate parts of the illustration into a unified whole.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Composition (Arthur Wesley Dow)</span></span>
+            </div>
+          </article>
+
+          <!-- S -->
+          <article class="term-card" data-term="Sectional View (Cut / Hatch)" data-category="drafting">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Sectional View (Cut / Hatch)</h3>
+                <span class="term-category-badge">Precision Drafting</span>
+              </div>
+              <p class="term-definition">
+                An engineering drawing where an imaginary cutting plane passes through an assembly to reveal interior construction, solid walls, and through-holes. Solid cross-sections are marked with standardized 45° section lines (cross-hatching).
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Alternate the 45° angle between adjacent mating parts (e.g., 45° right for piston, 45° left for cylinder wall) so parts do not visually fuse together.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Technical Drawing (Giesecke) &amp; Machine Drawing</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Sight-Size" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Sight-Size</h3>
+                <span class="term-category-badge">Perspective &amp; Space</span>
+              </div>
+              <p class="term-definition">
+                A classical atelier drawing arrangement where the drawing board is positioned side-by-side with the subject so that both appear identical in scale from a fixed viewing distance, enabling direct 1:1 horizontal sighting of contours and angles.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Stand at a fixed distance from both your model and your drafting board; extend your arm fully with a knitting needle or sighting stick to verify proportional ratios.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>The Practice and Science of Drawing (Harold Speed)</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Station Point (SP)" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Station Point (SP)</h3>
+                <span class="term-category-badge">Perspective &amp; Space</span>
+              </div>
+              <p class="term-definition">
+                The exact point in physical space where the eye of the observer is situated when viewing the scene or drawing. The distance of the station point from the picture plane determines the focal length and the placement of vanishing points.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                A station point positioned too close to the picture plane causes steep, jarring perspective angles; backing the station point up widens the distance between VPs and calms the scene.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Perspective Made Easy (Norling) &amp; How to Draw</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Streak-Free Gradient" data-category="markers">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Streak-Free Gradient</h3>
+                <span class="term-category-badge">Markers &amp; ID</span>
+              </div>
+              <p class="term-definition">
+                A smooth, continuous tonal transition achieved with alcohol-based dye markers by working wet-into-wet across marker layout paper, maintaining a wet edge so the solvent dissolves stroke borders before the ink evaporates.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Work in tight overlapping circular or figure-eight motions across marker bleed-proof paper; never pause mid-stroke or let the edge dry before blending the next value down.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Rendering with Markers (Ronald B. Kemnitzer)</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Subordination" data-category="composition">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Subordination</h3>
+                <span class="term-category-badge">Composition &amp; Notan</span>
+              </div>
+              <p class="term-definition">
+                One of Dow's five composition principles: the deliberate suppression of secondary elements, textures, and contrasting values to ensure that one primary element or group firmly dominates the composition.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Keep peripheral linework lighter and simplify background hatch densities so the viewer's eye is driven directly to the primary mechanical assembly or figure center.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Composition (Arthur Wesley Dow)</span></span>
+            </div>
+          </article>
+
+          <!-- T -->
+          <article class="term-card" data-term="Tensegrity &amp; Mass Systems" data-category="anatomy">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Tensegrity &amp; Mass Systems</h3>
+                <span class="term-category-badge">Anatomy &amp; Form</span>
+              </div>
+              <p class="term-definition">
+                George Bridgman's revolutionary anatomical concept where the human body is analyzed not as static medical muscles, but as interlocking wedges, blocks, and masses bound by dynamic tension and opposition forces.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Draw the torso as two solid opposing masses: when the ribcage tilts forward, the pelvis thrusts back; muscle groups on the compressed side bulge while the opposing side stretches taut.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Constructive Anatomy (George Bridgman)</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Tolerance" data-category="drafting">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Tolerance</h3>
+                <span class="term-category-badge">Precision Drafting</span>
+              </div>
+              <p class="term-definition">
+                The total amount by which a specific dimension is legally permitted to vary in manufacturing (e.g., &plusmn;0.05mm), ensuring that mating mechanical parts like shafts, pins, and bearings assemble correctly without binding.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Inscribe bilateral tolerances (e.g., 25.00 &plusmn; 0.02) or limit dimensions on critical bearing seats and precision journals in working drawings.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Machine Drawing (Narayana) &amp; Technical Drawing</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Transition" data-category="composition">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Transition</h3>
+                <span class="term-category-badge">Composition &amp; Notan</span>
+              </div>
+              <p class="term-definition">
+                One of Dow's five principles: the harmonizing or softening of two opposing lines or harsh contrasts through the introduction of a third mediating element (e.g., a bracket, curve, chamfer, or halftone transition).
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Place curved fillets or 45-degree chamfers at sharp 90-degree mechanical corners; in value work, insert a half-light band between direct light and deep core shadow.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Composition (Arthur Wesley Dow)</span></span>
+            </div>
+          </article>
+
+          <!-- V -->
+          <article class="term-card" data-term="Value Key (High &amp; Low Key)" data-category="light-value">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Value Key (High &amp; Low Key)</h3>
+                <span class="term-category-badge">Light &amp; Value</span>
+              </div>
+              <p class="term-definition">
+                The deliberate restriction of an artwork's overall tonal palette to a specific segment of the value scale. High key uses values predominantly from 1 to 4 (airy, bright); low key uses values from 6 to 9 (dramatic, moody, nocturnal).
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Choose your value key before rendering; an illustration with values scattered randomly across the full spectrum lacks emotional mood and compositional unity.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Creative Illustration (Loomis) &amp; Guptill</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Vanishing Point (VP)" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Vanishing Point (VP)</h3>
+                <span class="term-category-badge">Perspective &amp; Space</span>
+              </div>
+              <p class="term-definition">
+                The point on the horizon line (or at an incline) where a set of mutually parallel lines receding in 3D space appears to converge when projected onto the 2D picture plane.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                In 2-point perspective, the angle between lines drawn from the station point to the two vanishing points is always exactly 90 degrees on the layout sheet.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Perspective Made Easy (Norling) &amp; Robertson</span></span>
+            </div>
+          </article>
+
+          <article class="term-card" data-term="Vellum" data-category="drafting">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Vellum</h3>
+                <span class="term-category-badge">Precision Drafting</span>
+              </div>
+              <p class="term-definition">
+                A high-grade, translucent drafting paper manufactured from 100% rag or chemically treated cotton fibers. Engineered specifically for precision technical pen drafting, archival longevity, transparency for contact reproduction, and clean razor-blade ink scraping.
+              </p>
+              <div class="term-drafting-note">
+                <span class="term-note-label">Drafting Application</span>
+                Draft construction lines lightly with 2H/4H lead, ink with waterproof India ink using technical pens, and scrape mistakes cleanly away with an X-Acto blade without tearing the cotton fiber.
+              </div>
+            </div>
+            <div class="term-footer">
+              <span class="term-source">Core Text: <span>Mechanical Drawing (Cross) &amp; Guptill</span></span>
+            </div>
+          </article>
+
+          <!-- No Results Fallback State -->
+          <div id="lexicon-no-results" class="no-results-msg" role="status">
+            <h4>No matching definitions found</h4>
+            <p>Try searching for a different keyword, checking your spelling, or selecting "All Disciplines".</p>
+            <button type="button" class="btn-secondary" onclick="document.getElementById('search-clear').click()">Reset Search</button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ======================================================================
+       Slide-out Drawer Panel (About / Contact)
+       ====================================================================== -->
+  <aside id="drawer-panel" aria-hidden="true" aria-labelledby="drawer-title">
+    <div class="drawer-inner">
+      <button type="button" id="drawer-close" class="drawer-close-btn" aria-label="Close drawer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+
+      <!-- Left Column: About & Socials -->
+      <div class="drawer-section">
+        <h2 id="drawer-title">About Den of the Draftsman</h2>
+        <p>
+          Den of the Draftsman is dedicated to mastering traditional drafting, precision technical illustration, mechanical exploded views, and classical drawing disciplines.
+        </p>
+        <p>
+          The Draftsman's Lexicon is maintained alongside our active curriculum studies, capturing every core term, geometric projection law, and rendering mechanic for easy review.
+        </p>
+
+        <h2>Connect &amp; Support</h2>
+        <p>Watch live drafting sessions, study process logs, and back new commissions:</p>
+        <ul class="drawer-social-list">
+          <li>
+            <a href="https://www.youtube.com/@denofthedraftsman" target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.376.55 9.376.55s7.505 0 9.377-.55a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.twitch.tv/denofthedraftsman" target="_blank" rel="noopener noreferrer" title="Twitch" aria-label="Twitch">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/denofdraftsman" target="_blank" rel="noopener noreferrer" title="Twitter / X" aria-label="Twitter / X">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/denofthedraftsman" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.patreon.com/profile/creators?u=231767646" target="_blank" rel="noopener noreferrer" title="Patreon" aria-label="Patreon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.386.5C9.645.5 5 5.146 5 10.887c0 5.688 4.645 10.334 10.386 10.334 5.688 0 10.334-4.646 10.334-10.334C25.72 5.146 21.074.5 15.386.5zM0 23.5h4.15V.5H0z"/></svg>
+            </a>
+          </li>
+        </ul>
+
+        <p class="copyright-text">
+          &copy; Den of the Draftsman. All rights reserved.
+        </p>
+      </div>
+
+      <!-- Right Column: Direct Contact Form -->
+      <div class="drawer-section">
+        <h2>Inquiries &amp; Commissions</h2>
+        <form id="contact-form" class="contact-form" method="post" action="#">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required />
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" class="form-control" placeholder="Your Email" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea name="message" class="form-control" rows="4" placeholder="Your Message or Project Scope" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </aside>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
