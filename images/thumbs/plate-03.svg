@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <pattern id="grid3" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2dd4bf" stroke-width="0.5" stroke-opacity="0.12"/>
+      <path d="M 200 0 L 0 0 0 200" fill="none" stroke="#2dd4bf" stroke-width="1" stroke-opacity="0.2"/>
+    </pattern>
+    <radialGradient id="sphereLight" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="20%" stop-color="#cbd5e1" stop-opacity="0.8"/>
+      <stop offset="55%" stop-color="#475569" stop-opacity="0.6"/>
+      <stop offset="78%" stop-color="#0f172a" stop-opacity="0.95"/>
+      <stop offset="92%" stop-color="#334155" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#1e293b" stop-opacity="0.9"/>
+    </radialGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#181d22"/>
+  <rect width="100%" height="100%" fill="url(#grid3)"/>
+
+  <!-- Border -->
+  <rect x="25" y="25" width="750" height="550" fill="none" stroke="#2e353f" stroke-width="2"/>
+  <rect x="29" y="29" width="742" height="542" fill="none" stroke="#2dd4bf" stroke-width="0.75" stroke-opacity="0.4"/>
+
+  <!-- Technical Header -->
+  <text x="50" y="65" fill="#2dd4bf" font-family="ui-monospace, monospace" font-size="12" letter-spacing="3">PLATE 03 // PHASE 2: LIGHT &amp; SHADE</text>
+  <text x="50" y="85" fill="#f1f3f5" font-family="-apple-system, sans-serif" font-size="18" font-weight="bold">Physics of Light on Curved Form &amp; Value Zones</text>
+  <text x="50" y="105" fill="#9ba3af" font-family="-apple-system, sans-serif" font-size="12">Reference: Light and Shade by Anson K. Cross — Highlight, Half-Light, Core Shadow, Reflected Light</text>
+
+  <!-- Ground Plane Horizon -->
+  <line x1="80" y1="380" x2="720" y2="380" stroke="#2dd4bf" stroke-width="1" stroke-opacity="0.4"/>
+
+  <!-- Cast Shadow Ellipse -->
+  <ellipse cx="440" cy="420" rx="190" ry="32" fill="#0c0e10" fill-opacity="0.8" stroke="#2dd4bf" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="570" y="445" fill="#38bdf8" font-family="ui-monospace, monospace" font-size="9">CAST SHADOW (PENUMBRA / UMBRA)</text>
+
+  <!-- Sphere Body -->
+  <circle cx="360" cy="320" r="140" fill="url(#sphereLight)" stroke="#f1f3f5" stroke-width="2"/>
+
+  <!-- Light Vector Vector Arrow -->
+  <line x1="160" y1="120" x2="260" y2="220" stroke="#f59e0b" stroke-width="2"/>
+  <polygon points="260,220 245,210 252,203" fill="#f59e0b"/>
+  <text x="140" y="110" fill="#f59e0b" font-family="ui-monospace, monospace" font-size="10">KEY LIGHT VECTOR (45° AZIMUTH)</text>
+
+  <!-- Value Zone Callouts -->
+  <!-- Highlight -->
+  <circle cx="310" cy="270" r="14" fill="none" stroke="#2dd4bf" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="310" y1="256" x2="230" y2="180" stroke="#2dd4bf" stroke-width="1"/>
+  <text x="150" y="175" fill="#2dd4bf" font-family="ui-monospace, monospace" font-size="9">1. SPECULAR HIGHLIGHT</text>
+
+  <!-- Half-Light -->
+  <line x1="350" y1="240" x2="430" y2="180" stroke="#2dd4bf" stroke-width="1"/>
+  <text x="440" y="180" fill="#2dd4bf" font-family="ui-monospace, monospace" font-size="9">2. HALF-LIGHT (TRUE LOCAL VALUE)</text>
+
+  <!-- Core Shadow / Terminator -->
+  <path d="M 410 200 C 470 260 470 380 410 440" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,2"/>
+  <line x1="455" y1="320" x2="550" y2="280" stroke="#38bdf8" stroke-width="1"/>
+  <text x="560" y="284" fill="#38bdf8" font-family="ui-monospace, monospace" font-size="9">3. CORE SHADOW (TERMINATOR)</text>
+
+  <!-- Reflected Light -->
+  <line x1="465" y1="380" x2="570" y2="360" stroke="#2dd4bf" stroke-width="1"/>
+  <text x="580" y="364" fill="#2dd4bf" font-family="ui-monospace, monospace" font-size="9">4. REFLECTED LIGHT ZONE</text>
+
+  <!-- Ambient Occlusion Crest -->
+  <line x1="360" y1="460" x2="280" y2="500" stroke="#e11d48" stroke-width="1"/>
+  <text x="180" y="515" fill="#e11d48" font-family="ui-monospace, monospace" font-size="9">5. AMBIENT OCCLUSION (CONTACT CREST)</text>
+
+  <!-- Title Block Stamp Bottom Right -->
+  <g transform="translate(520, 480)">
+    <rect width="230" height="70" fill="#15181b" stroke="#2dd4bf" stroke-width="1"/>
+    <line x1="0" y1="24" x2="230" y2="24" stroke="#2e353f" stroke-width="1"/>
+    <line x1="0" y1="46" x2="230" y2="46" stroke="#2e353f" stroke-width="1"/>
+    <line x1="120" y1="0" x2="120" y2="70" stroke="#2e353f" stroke-width="1"/>
+    <text x="10" y="16" fill="#9ba3af" font-family="ui-monospace, monospace" font-size="9">SCALE: 1:1 TONAL</text>
+    <text x="130" y="16" fill="#9ba3af" font-family="ui-monospace, monospace" font-size="9">MEDIUM: GRAPHITE 4B-4H</text>
+    <text x="10" y="38" fill="#9ba3af" font-family="ui-monospace, monospace" font-size="9">STUDY: VALUE ZONES</text>
+    <text x="130" y="38" fill="#2dd4bf" font-family="ui-monospace, monospace" font-size="9">VERIFIED: PHASE 02</text>
+    <text x="10" y="60" fill="#f1f3f5" font-family="ui-monospace, monospace" font-size="10" font-weight="bold">DEN OF THE DRAFTSMAN</text>
+    <text x="180" y="60" fill="#2dd4bf" font-family="ui-monospace, monospace" font-size="10">DWG 003</text>
+  </g>
+</svg>

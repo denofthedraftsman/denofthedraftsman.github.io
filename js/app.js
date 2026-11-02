@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initDrawer();
   initLightbox();
   initContactForm();
+  initCurriculumFilters();
+  initLexiconSearch();
+  initSmoothScroll();
 });
 
 /* ==========================================================================
@@ -172,7 +175,7 @@ function initLightbox() {
 }
 
 /* ==========================================================================
-   Static Contact Form Handler (Formspree or direct fallback)
+   Static Contact Form Handler (Formspree or direct mailto fallback)
    ========================================================================== */
 function initContactForm() {
   const form = document.getElementById('contact-form');
@@ -180,7 +183,6 @@ function initContactForm() {
 
   form.addEventListener('submit', (e) => {
     const action = form.getAttribute('action');
-    // If user hasn't hooked up an action URL yet, offer friendly guidance
     if (!action || action === '#' || action === '') {
       e.preventDefault();
       const name = form.querySelector('[name="name"]')?.value || 'Guest';
@@ -190,5 +192,183 @@ function initContactForm() {
       const mailtoUrl = `mailto:contact@denofthedraftsman.com?subject=Inquiry from ${encodeURIComponent(name)}&body=${encodeURIComponent(message + '\n\nFrom: ' + email)}`;
       window.location.href = mailtoUrl;
     }
+  });
+}
+
+/* ==========================================================================
+   Curriculum Phase Filter
+   ========================================================================== */
+function initCurriculumFilters() {
+  const filterBtns = document.querySelectorAll('.phase-filters .filter-btn');
+  const phaseGroups = document.querySelectorAll('.phase-group');
+
+  if (filterBtns.length === 0 || phaseGroups.length === 0) return;
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const targetPhase = btn.getAttribute('data-phase');
+
+      phaseGroups.forEach((group) => {
+        const groupPhase = group.getAttribute('data-phase');
+        if (targetPhase === 'all' || targetPhase === groupPhase) {
+          group.classList.remove('is-hidden');
+        } else {
+          group.classList.add('is-hidden');
+        }
+      });
+    });
+  });
+}
+
+/* ==========================================================================
+   Draftsman's Lexicon Search & Filter
+   ========================================================================== */
+function initLexiconSearch() {
+  const searchInput = document.getElementById('lexicon-search');
+  const clearBtn = document.getElementById('search-clear');
+  const catPills = document.querySelectorAll('.cat-pill');
+  const alphaBtns = document.querySelectorAll('.alpha-btn');
+  const termCards = Array.from(document.querySelectorAll('.term-card'));
+  const counterEl = document.getElementById('lexicon-count');
+  const noResultsEl = document.getElementById('lexicon-no-results');
+
+  if (!searchInput && termCards.length === 0) return;
+
+  let activeCategory = 'all';
+  let activeLetter = 'all';
+  let searchQuery = '';
+
+  function updateLexicon() {
+    let visibleCount = 0;
+    const query = searchQuery.trim().toLowerCase();
+
+    termCards.forEach((card) => {
+      const term = (card.getAttribute('data-term') || '').toLowerCase();
+      const cat = (card.getAttribute('data-category') || '').toLowerCase();
+      const def = (card.querySelector('.term-definition')?.textContent || '').toLowerCase();
+      const note = (card.querySelector('.term-drafting-note')?.textContent || '').toLowerCase();
+      const firstLetter = term.charAt(0).toUpperCase();
+
+      const matchesSearch = !query || term.includes(query) || def.includes(query) || note.includes(query) || cat.includes(query);
+      const matchesCategory = activeCategory === 'all' || cat === activeCategory;
+      const matchesLetter = activeLetter === 'all' || firstLetter === activeLetter;
+
+      if (matchesSearch && matchesCategory && matchesLetter) {
+        card.classList.remove('is-hidden');
+        visibleCount++;
+      } else {
+        card.classList.add('is-hidden');
+      }
+    });
+
+    // Update Counter
+    if (counterEl) {
+      counterEl.textContent = `Showing ${visibleCount} of ${termCards.length} terms`;
+    }
+
+    // Toggle No Results View
+    if (noResultsEl) {
+      if (visibleCount === 0) {
+        noResultsEl.classList.add('is-visible');
+      } else {
+        noResultsEl.classList.remove('is-visible');
+      }
+    }
+
+    // Toggle Clear button
+    if (clearBtn) {
+      if (searchQuery.length > 0) {
+        clearBtn.classList.add('is-active');
+      } else {
+        clearBtn.classList.remove('is-active');
+      }
+    }
+  }
+
+  // Search input handler
+  searchInput?.addEventListener('input', (e) => {
+    searchQuery = e.target.value;
+    updateLexicon();
+  });
+
+  // Clear search button handler
+  clearBtn?.addEventListener('click', () => {
+    if (searchInput) {
+      searchInput.value = '';
+      searchQuery = '';
+      searchInput.focus();
+      updateLexicon();
+    }
+  });
+
+  // Category filter handlers
+  catPills.forEach((pill) => {
+    pill.addEventListener('click', () => {
+      catPills.forEach((p) => p.classList.remove('active'));
+      pill.classList.add('active');
+      activeCategory = pill.getAttribute('data-category') || 'all';
+      updateLexicon();
+    });
+  });
+
+  // Alphabetical jump / filter handlers
+  alphaBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const letter = btn.getAttribute('data-letter') || 'all';
+      if (activeLetter === letter) {
+        // Toggle off if already active
+        activeLetter = 'all';
+        btn.classList.remove('active');
+      } else {
+        alphaBtns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeLetter = letter;
+      }
+      updateLexicon();
+    });
+  });
+
+  // Check available letters on init to disable non-present letters
+  const availableLetters = new Set();
+  termCards.forEach((card) => {
+    const term = (card.getAttribute('data-term') || '').trim();
+    if (term.length > 0) {
+      availableLetters.add(term.charAt(0).toUpperCase());
+    }
+  });
+
+  alphaBtns.forEach((btn) => {
+    const letter = btn.getAttribute('data-letter');
+    if (letter && letter !== 'all' && !availableLetters.has(letter)) {
+      btn.classList.add('disabled');
+      btn.setAttribute('title', 'No terms starting with ' + letter);
+    }
+  });
+
+  // Initial count display
+  updateLexicon();
+}
+
+/* ==========================================================================
+   Smooth Anchor Scrolling
+   ========================================================================== */
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#' || targetId === '') return;
+
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        targetEl.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
   });
 }
