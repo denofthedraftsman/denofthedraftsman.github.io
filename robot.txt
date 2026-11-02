@@ -1,0 +1,89 @@
+# ==============================================================================
+# Den of the Draftsman — Robots Exclusion Protocol
+# Website: https://denofthedraftsman.com
+# Purpose: Block AI data harvesters & scrapers while allowing search discovery
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# User-Requested AI Scrapers & LLM Training Bots
+# ------------------------------------------------------------------------------
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+# ------------------------------------------------------------------------------
+# Additional High-Volume AI Training & Content Harvesters
+# ------------------------------------------------------------------------------
+# ByteDance / TikTok AI Scraper
+User-agent: Bytespider
+Disallow: /
+
+# Apple AI Model Training
+User-agent: Applebot-Extended
+Disallow: /
+
+# Meta AI & Llama Training Crawlers
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: Meta-ExternalFetcher
+Disallow: /
+
+# Amazon AI Training Crawler
+User-agent: Amazonbot
+Disallow: /
+
+# Cohere AI Model Training
+User-agent: cohere-ai
+Disallow: /
+
+# Diffbot AI & Web Extraction
+User-agent: Diffbot
+Disallow: /
+
+# Omgili / Web Scraper Datasets
+User-agent: Omgilibot
+Disallow: /
+
+# Timpi Search / AI Dataset Collector
+User-agent: Timpibot
+Disallow: /
+
+# Common Crawl & Open Scrapers
+User-agent: Scrapy
+Disallow: /
+
+# ------------------------------------------------------------------------------
+# Standard Search Engine Crawlers (Allowed for Public Site Discovery)
+# ------------------------------------------------------------------------------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# ------------------------------------------------------------------------------
+# Global Default
+# ------------------------------------------------------------------------------
+User-agent: *
+Allow: /
