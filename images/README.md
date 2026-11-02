@@ -1,8 +1,8 @@
 When your first illustrations are scanned:
 
-* Place high-resolution scans into images/fulls/ and cropped thumbnails into images/thumbs/.
-* In index.html, comment out or delete the <section class="under-construction"> block.
-* Uncomment the <section class="gallery-grid" id="gallery-grid"> block and add your piece:
+* Place high-resolution scans into `images/fulls/` and cropped thumbnails into `images/thumbs/`.
+* In `index.html`, comment out or delete the `<section class="under-construction">` block.
+* Uncomment the `<section class="gallery-grid" id="gallery-grid">` block and add your piece:
 
 
 ``` html
