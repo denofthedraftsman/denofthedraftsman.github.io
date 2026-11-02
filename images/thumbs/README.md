@@ -1,0 +1,1 @@
+Place cropped thumbnails here.
