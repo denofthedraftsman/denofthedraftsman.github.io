@@ -9,7 +9,7 @@
   --bg-surface: #1d2126;
   --bg-surface-elevated: #242930;
   --bg-surface-card: rgba(29, 33, 38, 0.88);
-  --bg-header: rgba(21, 24, 27, 0.94);
+  --bg-header: rgba(21, 24, 27, 0.96);
   --bg-panel: rgba(24, 28, 33, 0.98);
   --bg-modal: rgba(12, 14, 16, 0.95);
   
@@ -55,9 +55,10 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* Subtle drafting grid background */
+/* Subtle drafting grid background with top padding for fixed top header */
 body {
-  padding-bottom: var(--header-height);
+  padding-top: var(--header-height);
+  padding-bottom: 0;
   background-image: 
     linear-gradient(to right, var(--blueprint-line) 1px, transparent 1px),
     linear-gradient(to bottom, var(--blueprint-line) 1px, transparent 1px);
@@ -91,31 +92,34 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   Header & Fixed Navigation Bar
+   Header & Top Navigation Bar with Even Vertical Borders
    -------------------------------------------------------------------------- */
 #site-header {
   position: fixed;
-  bottom: 0;
+  top: 0;
+  bottom: auto;
   left: 0;
   width: 100%;
   height: var(--header-height);
   background: var(--bg-header);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: none;
+  border-bottom: 1px solid var(--border);
   z-index: 1000;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
-  padding: 0 1.5rem;
+  padding: 0 0 0 1.5rem;
 }
 
 .brand-wrapper {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 0.75rem;
   overflow: hidden;
   white-space: nowrap;
+  padding-right: 1.5rem;
 }
 
 .brand-title {
@@ -140,49 +144,79 @@ button {
 }
 
 .brand-tagline {
-  font-size: 0.85rem;
+  font-size: 0.825rem;
   font-weight: 300;
   letter-spacing: 0.04em;
   color: var(--text-muted);
 }
 
+/* Nav Menu: Even borders between every single item */
 .nav-menu {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   list-style: none;
-  gap: 0.4rem;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  display: flex;
+  align-items: stretch;
 }
 
 .nav-link {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 0.45rem 0.75rem;
-  height: 2.25rem;
-  border-radius: var(--radius-sm);
+  gap: 0.45rem;
+  padding: 0 1.15rem;
+  height: 100%;
   color: var(--text-muted);
-  font-size: 0.825rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-size: 0.775rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  border-left: 1px solid var(--border);
   transition: all var(--transition);
+  position: relative;
+  white-space: nowrap;
 }
 
-.nav-link.icon-only {
-  width: 2.25rem;
-  padding: 0;
+.nav-menu li:last-child .nav-link {
+  border-right: 1px solid var(--border);
 }
 
 .nav-link svg {
-  width: 1.15rem;
-  height: 1.15rem;
+  width: 1.05rem;
+  height: 1.05rem;
   fill: currentColor;
+  flex-shrink: 0;
+  transition: transform var(--transition), fill var(--transition);
 }
 
-.nav-link:hover,
+.nav-link:hover {
+  color: var(--accent);
+  background: var(--accent-subtle);
+}
+
+.nav-link:hover svg {
+  transform: translateY(-1px);
+}
+
 .nav-link.active {
   color: var(--accent);
   background: var(--accent-subtle);
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
 }
 
 .nav-btn {
@@ -984,537 +1018,5 @@ button {
 
 .cat-pill.active {
   background: var(--accent-subtle);
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.lexicon-counter {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-dim);
-  white-space: nowrap;
-}
-
-.alpha-jump-bar {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.25rem;
-  margin-bottom: 2.5rem;
-  padding: 0.6rem 1rem;
-  background: rgba(29, 33, 38, 0.6);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-}
-
-.alpha-btn {
-  width: 1.85rem;
-  height: 1.85rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 3px;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-dim);
-  transition: all var(--transition);
-}
-
-.alpha-btn:hover,
-.alpha-btn.active {
-  color: var(--accent);
-  background: var(--accent-subtle);
-}
-
-.alpha-btn.disabled {
-  opacity: 0.25;
-  pointer-events: none;
-}
-
-/* Lexicon Cards Grid */
-.lexicon-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 1.5rem;
-}
-
-.term-card {
-  background: var(--bg-surface-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 1.75rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: all var(--transition);
-  position: relative;
-}
-
-.term-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
-}
-
-.term-card.is-hidden {
-  display: none;
-}
-
-.term-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-
-.term-name {
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: var(--text-main);
-  line-height: 1.3;
-}
-
-.term-category-badge {
-  font-family: var(--font-mono);
-  font-size: 0.675rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.2rem 0.55rem;
-  border-radius: 4px;
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--border);
-  color: var(--accent);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.term-definition {
-  font-size: 0.925rem;
-  color: var(--text-muted);
-  line-height: 1.65;
-  margin-bottom: 1.25rem;
-}
-
-.term-drafting-note {
-  background: var(--bg-surface);
-  border-left: 2px solid var(--accent);
-  padding: 0.7rem 0.9rem;
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  margin-bottom: 1.25rem;
-  font-size: 0.85rem;
-  color: var(--text-main);
-  line-height: 1.5;
-}
-
-.term-note-label {
-  font-family: var(--font-mono);
-  font-size: 0.675rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-  display: block;
-  margin-bottom: 0.2rem;
-}
-
-.term-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--border);
-  margin-top: auto;
-}
-
-.term-source {
-  font-size: 0.775rem;
-  color: var(--text-dim);
-  font-family: var(--font-mono);
-}
-
-.term-source span {
-  color: var(--accent);
-}
-
-.no-results-msg {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 4rem 1.5rem;
-  background: var(--bg-surface);
-  border: 1px dashed var(--border);
-  border-radius: var(--radius-md);
-  display: none;
-}
-
-.no-results-msg.is-visible {
-  display: block;
-}
-
-.no-results-msg h4 {
-  font-size: 1.25rem;
-  color: var(--text-main);
-  margin-bottom: 0.5rem;
-}
-
-.no-results-msg p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 1.25rem;
-}
-
-/* --------------------------------------------------------------------------
-   Slide-out Drawer Panel (About / Contact)
-   -------------------------------------------------------------------------- */
-#drawer-panel {
-  position: fixed;
-  bottom: var(--header-height);
-  left: 0;
-  width: 100%;
-  max-height: calc(85vh - var(--header-height));
-  background: var(--bg-panel);
-  border-top: 1px solid var(--border);
-  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  z-index: 999;
-  overflow-y: auto;
-  transform: translateY(105%);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  padding: 3rem 2rem 2rem 2rem;
-}
-
-#drawer-panel.is-open {
-  transform: translateY(0);
-}
-
-.drawer-inner {
-  max-width: 72rem;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 4rem;
-  position: relative;
-}
-
-.drawer-close-btn {
-  position: absolute;
-  top: -1.5rem;
-  right: 0;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  color: var(--text-muted);
-  border: 1px solid var(--border);
-  background: var(--bg-surface);
-  transition: all var(--transition);
-}
-
-.drawer-close-btn:hover {
-  color: var(--text-main);
-  border-color: var(--accent);
-}
-
-.drawer-close-btn svg {
-  width: 1.25rem;
-  height: 1.25rem;
-  fill: currentColor;
-}
-
-.drawer-section h2 {
-  font-size: 1.25rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-main);
-  margin-bottom: 1rem;
-}
-
-.drawer-section p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
-  margin-bottom: 1.25rem;
-}
-
-.drawer-social-list {
-  display: flex;
-  gap: 0.75rem;
-  list-style: none;
-  margin-top: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.drawer-social-list a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 6px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  color: var(--text-muted);
-  transition: all var(--transition);
-}
-
-.drawer-social-list a:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
-
-.drawer-social-list svg {
-  width: 1.25rem;
-  height: 1.25rem;
-  fill: currentColor;
-}
-
-.copyright-text {
-  font-size: 0.8rem;
-  color: var(--text-dim);
-  margin-top: 2rem;
-}
-
-/* Contact Form */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.form-row {
-  display: flex;
-  gap: 1rem;
-}
-
-.form-group {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.form-control {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  color: var(--text-main);
-  font-family: inherit;
-  font-size: 0.9rem;
-  outline: none;
-  transition: border-color var(--transition);
-}
-
-.form-control:focus {
-  border-color: var(--border-focus);
-  box-shadow: 0 0 0 2px var(--accent-glow);
-}
-
-textarea.form-control {
-  resize: vertical;
-  min-height: 6rem;
-}
-
-.btn-primary {
-  align-self: flex-start;
-  padding: 0.7rem 1.75rem;
-  background: var(--accent);
-  color: #0d1e1c;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  border-radius: 4px;
-  transition: all var(--transition);
-}
-
-.btn-primary:hover {
-  background: var(--accent-hover);
-  color: #000;
-}
-
-/* --------------------------------------------------------------------------
-   Lightbox Modal (Bespoke vanilla JS modal)
-   -------------------------------------------------------------------------- */
-#lightbox {
-  position: fixed;
-  inset: 0;
-  background: var(--bg-modal);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  z-index: 2000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  padding: 1.5rem;
-}
-
-#lightbox.is-open {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.lightbox-content {
-  position: relative;
-  max-width: 90vw;
-  max-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lightbox-img {
-  max-width: 100%;
-  max-height: 75vh;
-  object-fit: contain;
-  border-radius: 4px;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
-}
-
-.lightbox-caption {
-  margin-top: 1rem;
-  text-align: center;
-  max-width: 48rem;
-}
-
-.lightbox-title {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--text-main);
-}
-
-.lightbox-desc {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-top: 0.25rem;
-}
-
-.lightbox-btn {
-  position: absolute;
-  color: var(--text-main);
-  background: rgba(29, 33, 38, 0.75);
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all var(--transition);
-}
-
-.lightbox-btn:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-  background: var(--bg-surface-elevated);
-}
-
-.lightbox-btn svg {
-  width: 1.25rem;
-  height: 1.25rem;
-  fill: currentColor;
-}
-
-.lightbox-close {
-  top: 1.5rem;
-  right: 1.5rem;
-}
-
-.lightbox-prev {
-  left: 1.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.lightbox-next {
-  right: 1.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-/* --------------------------------------------------------------------------
-   Responsive Breakpoints
-   -------------------------------------------------------------------------- */
-@media (max-width: 1024px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 900px) {
-  .brand-tagline {
-    display: none;
-  }
-  .drawer-inner {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Move navigation to the top on mobile for easy thumb reach */
-  body {
-    padding-bottom: 0;
-    padding-top: var(--header-height);
-  }
-
-  #site-header {
-    bottom: auto;
-    top: 0;
-    border-top: none;
-    border-bottom: 1px solid var(--border);
-    padding: 0 1rem;
-  }
-
-  #drawer-panel {
-    bottom: auto;
-    top: var(--header-height);
-    transform: translateY(-105%);
-    border-top: none;
-    border-bottom: 1px solid var(--border);
-    padding: 2rem 1.25rem;
-  }
-
-  #drawer-panel.is-open {
-    transform: translateY(0);
-  }
-
-  .hero-title {
-    font-size: 1.75rem;
-  }
-
-  .section-title {
-    font-size: 1.6rem;
-  }
-
-  .books-grid,
-  .lexicon-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .form-row {
-    flex-direction: column;
-  }
-
-  .lightbox-prev {
-    left: 0.5rem;
-  }
-
-  .lightbox-next {
-    right: 0.5rem;
-  }
-
-  .lexicon-filter-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  border-color: var(--accent);\n  color: var(--accent);\n}\n\n.lexicon-counter {\n  font-family: var(--font-mono);\n  font-size: 0.8rem;\n  color: var(--text-dim);\n  white-space: nowrap;\n}\n\n.alpha-jump-bar {\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  gap: 0.25rem;\n  margin-bottom: 2.5rem;\n  padding: 0.6rem 1rem;\n  background: rgba(29, 33, 38, 0.6);\n  border: 1px solid var(--border);\n  border-radius: var(--radius-sm);\n}\n\n.alpha-btn {\n  width: 1.85rem;\n  height: 1.85rem;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 3px;\n  font-family: var(--font-mono);\n  font-size: 0.75rem;\n  font-weight: 600;\n  color: var(--text-dim);\n  transition: all var(--transition);\n}\n\n.alpha-btn:hover,\n.alpha-btn.active {\n  color: var(--accent);\n  background: var(--accent-subtle);\n}\n\n.alpha-btn.disabled {\n  opacity: 0.25;\n  pointer-events: none;\n}\n\n/* Lexicon Cards Grid */\n.lexicon-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));\n  gap: 1.5rem;\n}\n\n.term-card {\n  background: var(--bg-surface-card);\n  border: 1px solid var(--border);\n  border-radius: var(--radius-md);\n  padding: 1.75rem;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  transition: all var(--transition);\n  position: relative;\n}\n\n.term-card:hover {\n  border-color: var(--accent);\n  transform: translateY(-2px);\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);\n}\n\n.term-card.is-hidden {\n  display: none;\n}\n\n.term-header {\n  display: flex;\n  align-items: flex-start;\n  justify-content: space-between;\n  gap: 0.75rem;\n  margin-bottom: 0.75rem;\n}\n\n.term-name {\n  font-size: 1.25rem;\n  font-weight: 700;\n  letter-spacing: 0.02em;\n  color: var(--text-main);\n  line-height: 1.3;\n}\n\n.term-category-badge {\n  font-family: var(--font-mono);\n  font-size: 0.675rem;\n  text-transform: uppercase;\n  letter-spacing: 0.08em;\n  padding: 0.2rem 0.55rem;\n  border-radius: 4px;\n  background: var(--bg-surface-elevated);\n  border: 1px solid var(--border);\n  color: var(--accent);\n  white-space: nowrap;\n  flex-shrink: 0;\n}\n\n.term-definition {\n  font-size: 0.925rem;\n  color: var(--text-muted);\n  line-height: 1.65;\n  margin-bottom: 1.25rem;\n}\n\n.term-drafting-note {\n  background: var(--bg-surface);\n  border-left: 2px solid var(--accent);\n  padding: 0.7rem 0.9rem;\n  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;\n  margin-bottom: 1.25rem;\n  font-size: 0.85rem;\n  color: var(--text-main);\n  line-height: 1.5;\n}\n\n.term-note-label {\n  font-family: var(--font-mono);\n  font-size: 0.675rem;\n  text-transform: uppercase;\n  letter-spacing: 0.08em;\n  color: var(--accent);\n  display: block;\n  margin-bottom: 0.2rem;\n}\n\n.term-footer {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding-top: 0.75rem;\n  border-top: 1px solid var(--border);\n  margin-top: auto;\n}\n\n.term-source {\n  font-size: 0.775rem;\n  color: var(--text-dim);\n  font-family: var(--font-mono);\n}\n\n.term-source span {\n  color: var(--accent);\n}\n\n.no-results-msg {\n  grid-column: 1 / -1;\n  text-align: center;\n  padding: 4rem 1.5rem;\n  background: var(--bg-surface);\n  border: 1px dashed var(--border);\n  border-radius: var(--radius-md);\n  display: none;\n}\n\n.no-results-msg.is-visible {\n  display: block;\n}\n\n.no-results-msg h4 {\n  font-size: 1.25rem;\n  color: var(--text-main);\n  margin-bottom: 0.5rem;\n}\n\n.no-results-msg p {\n  color: var(--text-muted);\n  font-size: 0.95rem;\n  margin-bottom: 1.25rem;\n}\n\n/* --------------------------------------------------------------------------\n   Slide-out Drawer Panel (About / Contact)\n   -------------------------------------------------------------------------- */\n#drawer-panel {\n  position: fixed;\n  top: var(--header-height);\n  bottom: auto;\n  left: 0;\n  width: 100%;\n  max-height: calc(85vh - var(--header-height));\n  background: var(--bg-panel);\n  border-top: none;\n  border-bottom: 1px solid var(--border);\n  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);\n  backdrop-filter: blur(16px);\n  -webkit-backdrop-filter: blur(16px);\n  z-index: 999;\n  overflow-y: auto;\n  transform: translateY(-105%);\n  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);\n  padding: 3rem 2rem 2rem 2rem;\n}\n\n#drawer-panel.is-open {\n  transform: translateY(0);\n}\n\n.drawer-inner {\n  max-width: 72rem;\n  margin: 0 auto;\n  display: grid;\n  grid-template-columns: 1.2fr 1fr;\n  gap: 4rem;\n  position: relative;\n}\n\n.drawer-close-btn {\n  position: absolute;\n  top: -1.5rem;\n  right: 0;\n  width: 2.5rem;\n  height: 2.5rem;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 50%;\n  color: var(--text-muted);\n  border: 1px solid var(--border);\n  background: var(--bg-surface);\n  transition: all var(--transition);\n}\n\n.drawer-close-btn:hover {\n  color: var(--text-main);\n  border-color: var(--accent);\n}\n\n.drawer-close-btn svg {\n  width: 1.25rem;\n  height: 1.25rem;\n  fill: currentColor;\n}\n\n.drawer-section h2 {\n  font-size: 1.25rem;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n  color: var(--text-main);\n  margin-bottom: 1rem;\n}\n\n.drawer-section p {\n  color: var(--text-muted);\n  font-size: 0.95rem;\n  line-height: 1.7;\n  margin-bottom: 1.25rem;\n}\n\n.drawer-social-list {\n  display: flex;\n  gap: 0.75rem;\n  list-style: none;\n  margin-top: 1.5rem;\n  flex-wrap: wrap;\n}\n\n.drawer-social-list a {\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  width: 2.5rem;\n  height: 2.5rem;\n  border-radius: 6px;\n  background: var(--bg-surface);\n  border: 1px solid var(--border);\n  color: var(--text-muted);\n  transition: all var(--transition);\n}\n\n.drawer-social-list a:hover {\n  color: var(--accent);\n  border-color: var(--accent);\n  transform: translateY(-2px);\n}\n\n.drawer-social-list svg {\n  width: 1.25rem;\n  height: 1.25rem;\n  fill: currentColor;\n}\n\n.copyright-text {\n  font-size: 0.8rem;\n  color: var(--text-dim);\n  margin-top: 2rem;\n}\n\n/* Contact Form */\n.contact-form {\n  display: flex;\n  flex-direction: column;\n  gap: 1rem;\n}\n\n.form-row {\n  display: flex;\n  gap: 1rem;\n}\n\n.form-group {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n}\n\n.form-control {\n  width: 100%;\n  padding: 0.75rem 1rem;\n  background: var(--bg-surface);\n  border: 1px solid var(--border);\n  border-radius: 4px;\n  color: var(--text-main);\n  font-family: inherit;\n  font-size: 0.9rem;\n  outline: none;\n  transition: border-color var(--transition);\n}\n\n.form-control:focus {\n  border-color: var(--border-focus);\n  box-shadow: 0 0 0 2px var(--accent-glow);\n}\n\ntextarea.form-control {\n  resize: vertical;\n  min-height: 6rem;\n}\n\n.btn-primary {\n  align-self: flex-start;\n  padding: 0.7rem 1.75rem;\n  background: var(--accent);\n  color: #0d1e1c;\n  font-weight: 600;\n  letter-spacing: 0.05em;\n  text-transform: uppercase;\n  border-radius: 4px;\n  transition: all var(--transition);\n}\n\n.btn-primary:hover {\n  background: var(--accent-hover);\n  color: #000;\n}\n\n/* --------------------------------------------------------------------------\n   Lightbox Modal (Bespoke vanilla JS modal)\n   -------------------------------------------------------------------------- */\n#lightbox {\n  position: fixed;\n  inset: 0;\n  background: var(--bg-modal);\n  backdrop-filter: blur(14px);\n  -webkit-backdrop-filter: blur(14px);\n  z-index: 2000;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  opacity: 0;\n  pointer-events: none;\n  transition: opacity 0.3s ease;\n  padding: 1.5rem;\n}\n\n#lightbox.is-open {\n  opacity: 1;\n  pointer-events: auto;\n}\n\n.lightbox-content {\n  position: relative;\n  max-width: 90vw;\n  max-height: 80vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.lightbox-img {\n  max-width: 100%;\n  max-height: 75vh;\n  object-fit: contain;\n  border-radius: 4px;\n  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);\n}\n\n.lightbox-caption {\n  margin-top: 1rem;\n  text-align: center;\n  max-width: 48rem;\n}\n\n.lightbox-title {\n  font-size: 1.15rem;\n  font-weight: 600;\n  color: var(--text-main);\n}\n\n.lightbox-desc {\n  font-size: 0.9rem;\n  color: var(--text-muted);\n  margin-top: 0.25rem;\n}\n\n.lightbox-btn {\n  position: absolute;\n  color: var(--text-main);\n  background: rgba(29, 33, 38, 0.75);\n  border: 1px solid var(--border);\n  border-radius: 50%;\n  width: 3rem;\n  height: 3rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer;\n  transition: all var(--transition);\n}\n\n.lightbox-btn:hover {\n  color: var(--accent);\n  border-color: var(--accent);\n  background: var(--bg-surface-elevated);\n}\n\n.lightbox-btn svg {\n  width: 1.25rem;\n  height: 1.25rem;\n  fill: currentColor;\n}\n\n.lightbox-close {\n  top: 1.5rem;\n  right: 1.5rem;\n}\n\n.lightbox-prev {\n  left: 1.5rem;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n.lightbox-next {\n  right: 1.5rem;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n/* --------------------------------------------------------------------------\n   Responsive Breakpoints\n   -------------------------------------------------------------------------- */\n@media (max-width: 1024px) {\n  .hero-grid {\n    grid-template-columns: 1fr;\n  }\n}\n\n@media (max-width: 900px) {\n  .brand-tagline {\n    display: none;\n  }\n  .drawer-inner {\n    grid-template-columns: 1fr;\n    gap: 2rem;\n  }\n}\n\n@media (max-width: 768px) {\n  body {\n    padding-top: var(--header-height);\n  }\n\n  #site-header {\n    padding: 0 0 0 0.75rem;\n  }\n\n  .brand-wrapper {\n    padding-right: 0.75rem;\n  }\n\n  .nav-menu {\n    overflow-x: auto;\n    -webkit-overflow-scrolling: touch;\n    scrollbar-width: none;\n  }\n  .nav-menu::-webkit-scrollbar {\n    display: none;\n  }\n\n  .nav-link {\n    padding: 0 0.75rem;\n    font-size: 0.725rem;\n    gap: 0.35rem;\n  }\n\n  .nav-link svg {\n    width: 0.95rem;\n    height: 0.95rem;\n  }\n\n  .hero-title {\n    font-size: 1.75rem;\n  }\n\n  .section-title {\n    font-size: 1.6rem;\n  }\n\n  .books-grid,\n  .lexicon-grid {\n    grid-template-columns: 1fr;\n  }\n\n  .form-row {\n    flex-direction: column;\n  }\n\n  .lightbox-prev {\n    left: 0.5rem;\n  }\n\n  .lightbox-next {\n    right: 0.5rem;\n  }\n\n  .lexicon-filter-row {\n    flex-direction: column;\n    align-items: flex-start;\n  }\n}\n"
 }
