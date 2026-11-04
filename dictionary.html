@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Draftsman's Lexicon &mdash; Den of the Draftsman</title>
   <meta name="description" content="A comprehensive reference dictionary of traditional drafting definitions, classical perspective principles, light physics, anatomy, ink rendering, and industrial design mechanics." />
-  <link rel="stylesheet" href="css/style.css?v=7" />
+  <link rel="stylesheet" href="css/style.css?v=8" />
 </head>
 <body>
 
@@ -109,7 +109,7 @@
             </div>
 
             <div class="lexicon-counter" id="lexicon-count">
-              Showing 18 of 18 terms
+              Showing 19 of 19 terms
             </div>
           </div>
 
@@ -149,21 +149,8 @@
         <!-- ==============================================================
              Dictionary Term Cards Grid
              HOW TO ADD A NEW TERM:
-             Copy and paste the <article class="term-card"> template below,
-             update data-term, data-category, the heading, and the definition:
-             (Categories: perspective | light-value | composition | anatomy | inking | markers | drafting)
-             
-             <article class="term-card" data-term="Term Name" data-category="perspective">
-               <div>
-                 <div class="term-header">
-                   <h3 class="term-name">Term Name</h3>
-                   <span class="term-category-badge">Perspective &amp; Space</span>
-                 </div>
-                 <p class="term-definition">
-                   Your definition here.
-                 </p>
-               </div>
-             </article>
+             Run `./add-term.sh` in your terminal to interactively add a new
+             term in alphabetical order and update the term counter.
              ============================================================== -->
         <div class="lexicon-grid" id="lexicon-grid">
 
@@ -228,6 +215,19 @@
               </div>
               <p class="term-definition">
                 This step dictates how the individual shapes, lines, and figures are proportionally linked together to form an organized narrative.
+              </p>
+            </div>
+          </article>
+
+          <!-- Eye Level -->
+          <article class="term-card" data-term="Eye Level" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Eye Level</h3>
+                <span class="term-category-badge">Perspective &amp; Space</span>
+              </div>
+              <p class="term-definition">
+                A height or position that is directly aligned with the level of a person's eyes when looking straight ahead.
               </p>
             </div>
           </article>

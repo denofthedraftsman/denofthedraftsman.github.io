@@ -312,7 +312,7 @@ function initLexiconSearch() {
   const noResultsEl = document.getElementById('lexicon-no-results');
   const emptyStateEl = document.getElementById('lexicon-empty-state');
 
-  if (!searchInput && termCards.length === 0) return;
+  if (!searchInput) return;
 
   let activeCategory = 'all';
   let activeLetter = 'all';
