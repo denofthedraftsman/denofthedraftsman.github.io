@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Draftsman's Lexicon &mdash; Den of the Draftsman</title>
   <meta name="description" content="A comprehensive reference dictionary of traditional drafting definitions, classical perspective principles, light physics, anatomy, ink rendering, and industrial design mechanics." />
-  <link rel="stylesheet" href="css/style.css?v=6" />
+  <link rel="stylesheet" href="css/style.css?v=7" />
 </head>
 <body>
 
@@ -109,7 +109,7 @@
             </div>
 
             <div class="lexicon-counter" id="lexicon-count">
-              Showing 0 of 0 terms
+              Showing 18 of 18 terms
             </div>
           </div>
 
@@ -147,38 +147,274 @@
         </nav>
 
         <!-- ==============================================================
-             Dictionary Term Cards Grid (Currently Empty)
-             HOW TO ADD NEW TERMS:
-             Uncomment and duplicate the <article class="term-card"> template
-             below, set data-term="Your Term" and data-category="category-key"
-             (perspective | light-value | composition | anatomy | inking | markers | drafting),
-             and fill in your definition, practical note, and source text.
+             Dictionary Term Cards Grid
+             HOW TO ADD A NEW TERM:
+             Copy and paste the <article class="term-card"> template below,
+             update data-term, data-category, the heading, and the definition:
+             (Categories: perspective | light-value | composition | anatomy | inking | markers | drafting)
+             
+             <article class="term-card" data-term="Term Name" data-category="perspective">
+               <div>
+                 <div class="term-header">
+                   <h3 class="term-name">Term Name</h3>
+                   <span class="term-category-badge">Perspective &amp; Space</span>
+                 </div>
+                 <p class="term-definition">
+                   Your definition here.
+                 </p>
+               </div>
+             </article>
              ============================================================== -->
         <div class="lexicon-grid" id="lexicon-grid">
 
-          <!--
-          <article class="term-card" data-term="Term Name" data-category="perspective">
+          <!-- Anatomical Integrity -->
+          <article class="term-card" data-term="Anatomical Integrity" data-category="anatomy">
             <div>
               <div class="term-header">
-                <h3 class="term-name">Term Name</h3>
+                <h3 class="term-name">Anatomical Integrity</h3>
+                <span class="term-category-badge">Anatomy &amp; Form</span>
+              </div>
+              <p class="term-definition">
+                Figures must have realistic physical proportions. Elements must match correctly; a giant should not stand next to a tiny house unless the depth justifies it.
+              </p>
+            </div>
+          </article>
+
+          <!-- Braccio Measurement -->
+          <article class="term-card" data-term="Braccio Measurement" data-category="anatomy">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Braccio Measurement</h3>
+                <span class="term-category-badge">Anatomy &amp; Form</span>
+              </div>
+              <p class="term-definition">
+                Alberti used the height of an average human body (divided into three braccia, or Florentine cubits) as the core scale module for everything else in the painting. One Florentine cubit is approximately equal to 58.36 cm.
+              </p>
+            </div>
+          </article>
+
+          <!-- Chiaroscuro (Light & Dark) -->
+          <article class="term-card" data-term="Chiaroscuro (Light & Dark)" data-category="light-value">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Chiaroscuro (Light &amp; Dark)</h3>
+                <span class="term-category-badge">Light &amp; Value</span>
+              </div>
+              <p class="term-definition">
+                Shadows must match the trajectory of a singular, defined light source to make forms appear solid and three-dimensional.
+              </p>
+            </div>
+          </article>
+
+          <!-- Circumscription -->
+          <article class="term-card" data-term="Circumscription" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Circumscription</h3>
                 <span class="term-category-badge">Perspective &amp; Space</span>
               </div>
               <p class="term-definition">
-                Your definition of the term as encountered in your studies.
+                This step establishes the structural framework of the scene by drawing the outer contours and outlines of all objects.
               </p>
-              <div class="term-drafting-note">
-                <span class="term-note-label">Drafting Application</span>
-                Practical note on how to apply this concept on the drawing board.
-              </div>
-            </div>
-            <div class="term-footer">
-              <span class="term-source">Core Text: <span>Book Title (Author)</span></span>
             </div>
           </article>
-          -->
+
+          <!-- Composition -->
+          <article class="term-card" data-term="Composition" data-category="composition">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Composition</h3>
+                <span class="term-category-badge">Composition &amp; Notan</span>
+              </div>
+              <p class="term-definition">
+                This step dictates how the individual shapes, lines, and figures are proportionally linked together to form an organized narrative.
+              </p>
+            </div>
+          </article>
+
+          <!-- Eyeline -->
+          <article class="term-card" data-term="Eyeline" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Eyeline</h3>
+                <span class="term-category-badge">Perspective &amp; Space</span>
+              </div>
+              <p class="term-definition">
+                The direction in which a person or actor looks, representing their line of sight or gaze. The whole system of perspective drawing is based on the height of the eyeline; whether or not the eye line is above or below the subject.
+              </p>
+            </div>
+          </article>
+
+          <!-- Grace and Variety -->
+          <article class="term-card" data-term="Grace and Variety" data-category="composition">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Grace and Variety</h3>
+                <span class="term-category-badge">Composition &amp; Notan</span>
+              </div>
+              <p class="term-definition">
+                A good composition must show movement, emotive variety, and balanced arrangements of figures to tell a compelling story.
+              </p>
+            </div>
+          </article>
+
+          <!-- Horizon Line -->
+          <article class="term-card" data-term="Horizon Line" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Horizon Line</h3>
+                <span class="term-category-badge">Perspective &amp; Space</span>
+              </div>
+              <p class="term-definition">
+                The apparent line where the earth, land, or sea seems to meet the sky. The horizontal line that is passing directly through this vanishing point to set the viewer's eye height.
+              </p>
+            </div>
+          </article>
+
+          <!-- One Point Perspective -->
+          <article class="term-card" data-term="One Point Perspective" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">One Point Perspective</h3>
+                <span class="term-category-badge">Perspective &amp; Space</span>
+              </div>
+              <p class="term-definition">
+                A drawing method that uses a single vanishing point on the horizon line to create the illusion of three-dimensional depth on a flat, two-dimensional surface.
+              </p>
+              <ul class="term-sublist">
+                <li><strong>The Convergence Rule:</strong> Any set of parallel lines that are not parallel to your picture (drawing) plane will appear to slant toward and meet at a single vanishing point.</li>
+                <li><strong>The Horizon Line Rule:</strong> The horizon line always sits at the exact eye level of the viewer. Vanishing points for horizontal ground-plane or ceiling-plane lines must lie directly on this horizon line.</li>
+                <li><strong>True Parallel Exception (No Convergence):</strong> Lines that are physically parallel and parallel to your flat piece of paper or picture plane do not converge. They stay genuinely parallel and straight (for example, the front face of a building looking at you straight-on).</li>
+                <li><strong>Vertical Lines:</strong> In standard 1-point and 2-point perspective, all vertical lines (heights) remain strictly vertical (perpendicular to the ground) and do not slant toward a vanishing point. (Vertical lines only gain a vanishing point in 3-point perspective when you look sharply up or down at a tall object.)</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Orthogonal Lines -->
+          <article class="term-card" data-term="Orthogonal Lines" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Orthogonal Lines</h3>
+                <span class="term-category-badge">Perspective &amp; Space</span>
+              </div>
+              <p class="term-definition">
+                Two lines that intersect or cross each other at a right angle (90 degrees). Lines connecting the base boundaries of the canvas to this centric point. These guide lines create the illusion of recession into deep space.
+              </p>
+            </div>
+          </article>
+
+          <!-- Perspective -->
+          <article class="term-card" data-term="Perspective" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Perspective</h3>
+                <span class="term-category-badge">Perspective &amp; Space</span>
+              </div>
+              <p class="term-definition">
+                An art technique used to make a subject have dimensions, look solid, appear close up, appear far away, or to suggest a feeling of space. The system was mathematically formalized around 1415 in Florence, Italy, by architect Filippo Brunelleschi and formalized by Leon Battista Alberti.
+              </p>
+            </div>
+          </article>
+
+          <!-- Picture Plane -->
+          <article class="term-card" data-term="Picture Plane" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Picture Plane</h3>
+                <span class="term-category-badge">Perspective &amp; Space</span>
+              </div>
+              <p class="term-definition">
+                The flat, two-dimensional surface of a canvas, paper, or screen, or an imaginary transparent window placed between the viewer's eye and the subject.
+              </p>
+            </div>
+          </article>
+
+          <!-- Reception of Light -->
+          <article class="term-card" data-term="Reception of Light" data-category="light-value">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Reception of Light</h3>
+                <span class="term-category-badge">Light &amp; Value</span>
+              </div>
+              <p class="term-definition">
+                The final stage covers color, light, and shadow to give flat shapes realistic volume.
+              </p>
+            </div>
+          </article>
+
+          <!-- The Four True Colors -->
+          <article class="term-card" data-term="The Four True Colors" data-category="light-value">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">The Four True Colors</h3>
+                <span class="term-category-badge">Light &amp; Value</span>
+              </div>
+              <p class="term-definition">
+                He recognized four primary colors associated with the natural elements: Red (Fire), Blue (Air), Green (Water), and Ash/Grey (Earth).
+              </p>
+            </div>
+          </article>
+
+          <!-- Three Sets of Parallel Lines -->
+          <article class="term-card" data-term="Three Sets of Parallel Lines" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Three Sets of Parallel Lines</h3>
+                <span class="term-category-badge">Perspective &amp; Space</span>
+              </div>
+              <p class="term-definition">
+                Refer to three distinct groups of straight, coplanar lines (lines that lie on the same flat surface) where every line in a given set runs alongside the others in that same set without ever crossing (i.e., a brick's Length line, Width line, and Height line). In a 1-point perspective drawing, any two lines representing receding parallel lines (such as the top left and top right length lines of a brick) can be used to find the vanishing point by tracing and extending them forward until they cross each other. A horizontal line drawn through this point gives us the eye-level. Key properties include:
+              </p>
+              <ul class="term-sublist">
+                <li><strong>No Intersection:</strong> Lines within the same set never meet.</li>
+                <li><strong>Constant Distance:</strong> The perpendicular distance between any two lines in the same set is always equal.</li>
+                <li><strong>Same Slope:</strong> On a coordinate plane, all lines belonging to the exact same parallel set share the same mathematical slope <code>y = mx + b</code>.</li>
+                <li><strong>Notation:</strong> Lines are typically marked with arrows (like <code>&gt;</code> or <code>&gt;&gt;</code>) to show which lines belong to which parallel set.</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Transversal Line -->
+          <article class="term-card" data-term="Transversal Line" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Transversal Line</h3>
+                <span class="term-category-badge">Perspective &amp; Space</span>
+              </div>
+              <p class="term-definition">
+                A straight line that crosses two or more other lines at different, distinct points in the same plane. To accurately shrink objects as they recede, create a proportional floor grid (tessellation).
+              </p>
+            </div>
+          </article>
+
+          <!-- Vanishing Point -->
+          <article class="term-card" data-term="Vanishing Point" data-category="perspective">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">Vanishing Point</h3>
+                <span class="term-category-badge">Perspective &amp; Space</span>
+              </div>
+              <p class="term-definition">
+                The location on a horizon line in a perspective drawing or photograph where receding parallel lines appear to meet and converge. This is a single point inside the drawing canvas that aligns directly with the eye level of the ideal viewer.
+              </p>
+            </div>
+          </article>
+
+          <!-- White and Black -->
+          <article class="term-card" data-term="White and Black" data-category="light-value">
+            <div>
+              <div class="term-header">
+                <h3 class="term-name">White and Black</h3>
+                <span class="term-category-badge">Light &amp; Value</span>
+              </div>
+              <p class="term-definition">
+                Alberti taught that white and black are not true colors, but modifiers used to create light and shadow.
+              </p>
+            </div>
+          </article>
 
           <!-- Empty Lexicon State (Automatically hidden once any <article class="term-card"> is added) -->
-          <div id="lexicon-empty-state" class="gallery-empty-state" style="grid-column: 1 / -1; width: 100%;">
+          <div id="lexicon-empty-state" class="gallery-empty-state is-hidden" style="grid-column: 1 / -1; width: 100%;">
             <h2 class="gallery-empty-title">Lexicon Currently Empty</h2>
             <p class="gallery-empty-desc">
               Definitions, technical terms, and drafting principles will be added here as I come across them in my studies.

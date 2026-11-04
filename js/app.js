@@ -323,13 +323,12 @@ function initLexiconSearch() {
     const query = searchQuery.trim().toLowerCase();
 
     termCards.forEach((card) => {
-      const term = (card.getAttribute('data-term') || '').toLowerCase();
+      const term = (card.getAttribute('data-term') || card.querySelector('.term-name')?.textContent || '').trim().toLowerCase();
       const cat = (card.getAttribute('data-category') || '').toLowerCase();
-      const def = (card.querySelector('.term-definition')?.textContent || '').toLowerCase();
-      const note = (card.querySelector('.term-drafting-note')?.textContent || '').toLowerCase();
+      const fullText = (card.textContent || '').toLowerCase();
       const firstLetter = term.charAt(0).toUpperCase();
 
-      const matchesSearch = !query || term.includes(query) || def.includes(query) || note.includes(query) || cat.includes(query);
+      const matchesSearch = !query || term.includes(query) || fullText.includes(query) || cat.includes(query);
       const matchesCategory = activeCategory === 'all' || cat === activeCategory;
       const matchesLetter = activeLetter === 'all' || firstLetter === activeLetter;
 
@@ -415,7 +414,7 @@ function initLexiconSearch() {
   // Check available letters on init to disable non-present letters
   const availableLetters = new Set();
   termCards.forEach((card) => {
-    const term = (card.getAttribute('data-term') || '').trim();
+    const term = (card.getAttribute('data-term') || card.querySelector('.term-name')?.textContent || '').trim();
     if (term.length > 0) {
       availableLetters.add(term.charAt(0).toUpperCase());
     }
