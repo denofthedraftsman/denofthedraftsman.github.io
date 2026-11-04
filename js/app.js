@@ -310,6 +310,7 @@ function initLexiconSearch() {
   const termCards = Array.from(document.querySelectorAll('.term-card'));
   const counterEl = document.getElementById('lexicon-count');
   const noResultsEl = document.getElementById('lexicon-no-results');
+  const emptyStateEl = document.getElementById('lexicon-empty-state');
 
   if (!searchInput && termCards.length === 0) return;
 
@@ -345,9 +346,13 @@ function initLexiconSearch() {
       counterEl.textContent = `Showing ${visibleCount} of ${termCards.length} terms`;
     }
 
-    // Toggle No Results View
+    // Toggle Empty State vs. No Search Results View
+    if (emptyStateEl) {
+      emptyStateEl.classList.toggle('is-hidden', termCards.length > 0);
+    }
+
     if (noResultsEl) {
-      if (visibleCount === 0) {
+      if (termCards.length > 0 && visibleCount === 0) {
         noResultsEl.classList.add('is-visible');
       } else {
         noResultsEl.classList.remove('is-visible');
