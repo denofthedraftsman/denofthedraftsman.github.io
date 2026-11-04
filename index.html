@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Den of the Draftsman &mdash; Traditional Drafting &amp; Classical Drawing from Zero</title>
   <meta name="description" content="Documenting the journey of going from zero experience to advanced draftsman across a 22-book classical curriculum in perspective, anatomy, ink rendering, and industrial design." />
-  <link rel="stylesheet" href="css/style.css?v=2" />
+  <link rel="stylesheet" href="css/style.css?v=3" />
 </head>
 <body>
 
@@ -276,40 +276,21 @@
           </p>
         </div>
 
-        <div class="gallery-grid">
-          
-          <article class="gallery-card" data-full="images/fulls/plate-01.svg" data-title="Two-Point Perspective &amp; Box Rotation System" data-desc="Graphite 2H/HB on Bristol (11 x 14 in., 2026). Study exercise from Norling's Perspective Made Easy (Milestone 01).">
-            <span class="gallery-plate-badge">Plate 01 // Phase 1</span>
-            <img src="images/thumbs/plate-01.svg" alt="Plate 01: 2-Point Perspective Box Rotation" loading="lazy" />
-            <div class="gallery-overlay">
-              <h3 class="gallery-item-title">Two-Point Perspective &amp; Box Rotation</h3>
-              <p class="gallery-item-desc">Norling Study &bull; Graphite 2H/HB &bull; 11x14 in.</p>
-            </div>
-          </article>
-
-          <article class="gallery-card" data-full="images/fulls/plate-02.svg" data-title="Contour Sighting, Plumb Lines &amp; Sighting" data-desc="Charcoal &amp; 2B Graphite on Bristol (11 x 14 in., 2026). Harold Speed Study on proportion sighting.">
-            <span class="gallery-plate-badge">Plate 02 // Phase 1</span>
-            <img src="images/thumbs/plate-02.svg" alt="Plate 02: Contour Sighting &amp; Plumb Lines" loading="lazy" />
-            <div class="gallery-overlay">
-              <h3 class="gallery-item-title">Contour Sighting &amp; Plumb Lines</h3>
-              <p class="gallery-item-desc">Speed Study &bull; Charcoal / 2B &bull; 11x14 in.</p>
-            </div>
-          </article>
-
-          <article class="gallery-card" data-full="images/fulls/plate-03.svg" data-title="Physics of Light on Curved Form &amp; Value Zones" data-desc="Tonal Graphite 4H to 4B on Bristol (11 x 14 in., 2026). Anson K. Cross Study on light falloff and terminator.">
-            <span class="gallery-plate-badge">Plate 03 // Phase 2</span>
-            <img src="images/thumbs/plate-03.svg" alt="Plate 03: Physics of Light &amp; Value Zones" loading="lazy" />
-            <div class="gallery-overlay">
-              <h3 class="gallery-item-title">Physics of Light on Form</h3>
-              <p class="gallery-item-desc">Cross Study &bull; Tonal Graphite &bull; 11x14 in.</p>
-            </div>
-          </article>
-
+        <div id="home-gallery-empty" class="gallery-empty-state">
+          <svg viewBox="0 0 24 24" class="gallery-empty-icon" aria-hidden="true">
+            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+          </svg>
+          <h3 class="gallery-empty-title">No Study Plates Uploaded Yet</h3>
+          <p class="gallery-empty-desc">
+            Authentic hand-drawn plates from the drafting board will appear here as they are scanned and uploaded to the Art Gallery.
+          </p>
         </div>
+
+        <div class="gallery-grid" id="home-gallery-grid"></div>
 
         <div style="text-align: center; margin-top: 2.5rem;">
           <a href="gallery.html" class="btn-accent">
-            View All Selected Works &amp; Plates &rarr;
+            Open Art Gallery &amp; Upload Plates &rarr;
           </a>
         </div>
       </div>

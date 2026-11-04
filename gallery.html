@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Selected Works &amp; Study Plates &mdash; Den of the Draftsman</title>
   <meta name="description" content="Curated portfolio of traditional drafting study plates, perspective exercises, and mechanical illustrations with full dimensions, medium, and curriculum metadata." />
-  <link rel="stylesheet" href="css/style.css?v=2" />
+  <link rel="stylesheet" href="css/style.css?v=3" />
 </head>
 <body>
 
@@ -74,328 +74,92 @@
       <!-- Header -->
       <div class="section-header">
         <span class="section-tag">Portfolio &amp; Study Archive</span>
-        <h1 class="section-title">Selected Works</h1>
+        <h1 class="section-title">Art Gallery</h1>
         <p class="section-desc">
-          A curated catalog of exercise plates, geometric perspective studies, and finished technical illustrations. Click any plate to open the full-resolution inspection lightbox with complete material and dimensional specifications.
+          Original hand-drawn study plates, geometric perspective exercises, and finished technical illustrations from the drafting board. Click any artwork or its expand icon to open an almost full-page rendering.
+        </p>
+        <div style="margin-top: 1.5rem;">
+          <button type="button" id="toggle-upload-btn" class="btn-accent" aria-expanded="false" aria-controls="gallery-upload-panel">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+              <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+            </svg>
+            Upload Artwork / Study Plate
+          </button>
+        </div>
+      </div>
+
+      <!-- Interactive Upload Panel -->
+      <section id="gallery-upload-panel" class="gallery-upload-panel" aria-hidden="true">
+        <div class="upload-panel-header">
+          <h2 class="upload-panel-title">Upload New Study Plate</h2>
+          <button type="button" id="close-upload-btn" class="upload-panel-close" aria-label="Close upload panel">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          </button>
+        </div>
+        <form id="gallery-upload-form" class="gallery-upload-form">
+          <div class="upload-dropzone" id="upload-dropzone">
+            <input type="file" id="plate-file-input" accept="image/*" required class="upload-file-input" />
+            <div class="upload-dropzone-content" id="upload-dropzone-content">
+              <svg viewBox="0 0 24 24" class="upload-dropzone-icon" aria-hidden="true">
+                <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/>
+              </svg>
+              <span class="upload-dropzone-label" id="upload-file-label">Click or drag &amp; drop your scanned image here</span>
+              <span class="upload-dropzone-hint">Supports JPG, PNG, WebP, or SVG</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="plate-title-input" class="upload-field-label">Artwork / Plate Title</label>
+              <input type="text" id="plate-title-input" class="form-control" placeholder="e.g. Two-Point Perspective Box Rotation" required />
+            </div>
+            <div class="form-group">
+              <label for="plate-badge-input" class="upload-field-label">Plate / Phase Badge (Optional)</label>
+              <input type="text" id="plate-badge-input" class="form-control" placeholder="e.g. Plate 01 // Phase 1" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="plate-desc-input" class="upload-field-label">Medium, Dimensions &amp; Notes (Optional)</label>
+            <input type="text" id="plate-desc-input" class="form-control" placeholder="e.g. Graphite 2H/HB on Bristol • 11 x 14 in. (2026)" />
+          </div>
+
+          <div class="upload-form-actions">
+            <button type="submit" class="btn-accent">Add to Gallery</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Empty State (Shown when no images are in the gallery) -->
+      <div id="gallery-empty-state" class="gallery-empty-state">
+        <svg viewBox="0 0 24 24" class="gallery-empty-icon" aria-hidden="true">
+          <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+        </svg>
+        <h2 class="gallery-empty-title">No Artworks Uploaded Yet</h2>
+        <p class="gallery-empty-desc">
+          This gallery is reserved exclusively for authentic hand-drawn study plates and illustrations from the drafting board. Click <strong>Upload Artwork / Study Plate</strong> above to add your work, or place image files in <code>images/fulls/</code> and <code>images/thumbs/</code>.
         </p>
       </div>
 
-      <!-- Gallery Grid: 10 to 25 Curated Slots -->
+      <!-- Gallery Grid (Starts empty — populated by user uploads or static <article class="gallery-card"> entries) -->
       <div class="gallery-grid" id="gallery-grid">
-
-        <!-- Plate 01 (Active Norling Study) -->
-        <article class="gallery-card" data-full="images/fulls/plate-01.svg" 
-                 data-title="Two-Point Perspective &amp; Box Rotation System" 
-                 data-desc="Year: 2026 &bull; Medium: Graphite 2H/HB &bull; Surface: 2-Ply Strathmore 500 Bristol &bull; Dimensions: 11 x 14 in. (27.9 x 35.6 cm) &bull; Reference: Ernest R. Norling, Perspective Made Easy, Ch. 1&ndash;3">
-          <span class="gallery-plate-badge">Plate 01 // Phase 1</span>
-          <img src="images/thumbs/plate-01.svg" alt="Plate 01: Two-Point Perspective Box Rotation" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Two-Point Perspective &amp; Box Rotation</h2>
-            <p class="gallery-item-desc">Graphite 2H/HB on Bristol &bull; 11 x 14 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 02 (Active Speed Study) -->
-        <article class="gallery-card" data-full="images/fulls/plate-02.svg" 
-                 data-title="Contour Sighting, Plumb Lines &amp; Sighting" 
-                 data-desc="Year: 2026 &bull; Medium: Vine Charcoal &amp; 2B Graphite &bull; Surface: 2-Ply Smooth Bristol &bull; Dimensions: 11 x 14 in. (27.9 x 35.6 cm) &bull; Reference: Harold Speed, The Practice and Science of Drawing, Ch. 4">
-          <span class="gallery-plate-badge">Plate 02 // Phase 1</span>
-          <img src="images/thumbs/plate-02.svg" alt="Plate 02: Contour Sighting &amp; Plumb Lines" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Contour Sighting &amp; Plumb Lines</h2>
-            <p class="gallery-item-desc">Charcoal &amp; 2B Graphite &bull; 11 x 14 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 03 (Active Cross Light Study) -->
-        <article class="gallery-card" data-full="images/fulls/plate-03.svg" 
-                 data-title="Physics of Light on Curved Form &amp; Value Zones" 
-                 data-desc="Year: 2026 &bull; Medium: Tonal Graphite 4H to 4B &bull; Surface: Strathmore 500 Vellum Finish &bull; Dimensions: 11 x 14 in. (27.9 x 35.6 cm) &bull; Reference: Anson K. Cross, Light and Shade, Ch. 2">
-          <span class="gallery-plate-badge">Plate 03 // Phase 2</span>
-          <img src="images/thumbs/plate-03.svg" alt="Plate 03: Physics of Light &amp; Value Zones" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Physics of Light on Form</h2>
-            <p class="gallery-item-desc">Tonal Graphite 4H&ndash;4B &bull; 11 x 14 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 04 (Slot: Edwin G. Lutz Study) -->
-        <article class="gallery-card" data-full="images/fulls/plate-01.svg" 
-                 data-title="Geometric Polygon Decomposition &amp; Manufactured Primitives" 
-                 data-desc="Year: 2026 &bull; Medium: Hard Graphite 3H/H &bull; Surface: Heavyweight Drawing Paper &bull; Dimensions: 11 x 14 in. (27.9 x 35.6 cm) &bull; Reference: Edwin G. Lutz, Practical Drawing, Synthetic Construction">
-          <span class="gallery-plate-badge">Plate 04 // Phase 1</span>
-          <img src="images/thumbs/plate-01.svg" alt="Plate 04: Geometric Polygon Decomposition" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Polygon Construction &amp; Decomposition</h2>
-            <p class="gallery-item-desc">Graphite 3H/H on Bristol &bull; 11 x 14 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 05 (Slot: John Ruskin Observation Study) -->
-        <article class="gallery-card" data-full="images/fulls/plate-02.svg" 
-                 data-title="Organic Branching &amp; Tonal Gradations from Nature" 
-                 data-desc="Year: 2026 &bull; Medium: Pencil &amp; Neutral Wash &bull; Surface: Cold Press Rag Paper &bull; Dimensions: 9 x 12 in. (22.9 x 30.5 cm) &bull; Reference: John Ruskin, The Elements of Drawing, Letter I">
-          <span class="gallery-plate-badge">Plate 05 // Phase 1</span>
-          <img src="images/thumbs/plate-02.svg" alt="Plate 05: Organic Branching from Nature" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Organic Branching &amp; Sighted Gradation</h2>
-            <p class="gallery-item-desc">Pencil &amp; Ink Wash &bull; 9 x 12 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 06 (Slot: Scott Robertson Freehand Grids) -->
-        <article class="gallery-card" data-full="images/fulls/plate-01.svg" 
-                 data-title="Freehand Perspective Grids &amp; Ellipse Alignment" 
-                 data-desc="Year: 2026 &bull; Medium: Mechanical Lead 0.5mm 2B &bull; Surface: Smooth Marker Bond &bull; Dimensions: 11 x 17 in. (27.9 x 43.2 cm) &bull; Reference: Scott Robertson, How to Draw, Ch. 4">
-          <span class="gallery-plate-badge">Plate 06 // Phase 1</span>
-          <img src="images/thumbs/plate-01.svg" alt="Plate 06: Freehand Perspective Grids" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Freehand Grids &amp; Axle Ellipses</h2>
-            <p class="gallery-item-desc">Mechanical Lead &bull; 11 x 17 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 07 (Slot: Arthur L. Guptill Pencil Strokes) -->
-        <article class="gallery-card" data-full="images/fulls/plate-03.svg" 
-                 data-title="Graduated Pencil Stroke Mechanics &amp; Tonal Ladders" 
-                 data-desc="Year: 2026 &bull; Medium: Wood-cased Graphite 6B to 2H &bull; Surface: Strathmore 500 Medium &bull; Dimensions: 11 x 14 in. (27.9 x 35.6 cm) &bull; Reference: Arthur L. Guptill, Sketching &amp; Rendering in Pencil, Ch. 2">
-          <span class="gallery-plate-badge">Plate 07 // Phase 2</span>
-          <img src="images/thumbs/plate-03.svg" alt="Plate 07: Graduated Pencil Stroke Mechanics" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Pencil Stroke Mechanics &amp; Value Scales</h2>
-            <p class="gallery-item-desc">Graphite 6B&ndash;2H &bull; 11 x 14 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 08 (Slot: Arthur L. Guptill Architectural Textures) -->
-        <article class="gallery-card" data-full="images/fulls/plate-01.svg" 
-                 data-title="Architectural Material Textures: Ashlar Stone &amp; Weathered Wood" 
-                 data-desc="Year: 2026 &bull; Medium: Chisel-point Graphite &bull; Surface: Bristol Board &bull; Dimensions: 12 x 16 in. (30.5 x 40.6 cm) &bull; Reference: Arthur L. Guptill, Sketching &amp; Rendering in Pencil, Ch. 5">
-          <span class="gallery-plate-badge">Plate 08 // Phase 2</span>
-          <img src="images/thumbs/plate-01.svg" alt="Plate 08: Architectural Material Textures" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Ashlar Stone &amp; Weathered Wood Textures</h2>
-            <p class="gallery-item-desc">Chisel Graphite &bull; 12 x 16 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 09 (Slot: Vanderpoel Figure Planes) -->
-        <article class="gallery-card" data-full="images/fulls/plate-02.svg" 
-                 data-title="Anatomical Planes of the Torso &amp; Skeletal Anchors" 
-                 data-desc="Year: 2026 &bull; Medium: Carbon Pencil &bull; Surface: Toned Ingress Paper &bull; Dimensions: 14 x 17 in. (35.6 x 43.2 cm) &bull; Reference: John H. Vanderpoel, The Human Figure, The Torso">
-          <span class="gallery-plate-badge">Plate 09 // Phase 2</span>
-          <img src="images/thumbs/plate-02.svg" alt="Plate 09: Anatomical Planes of the Torso" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Anatomical Planes of the Torso</h2>
-            <p class="gallery-item-desc">Carbon Pencil on Toned &bull; 14 x 17 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 10 (Slot: George Bridgman Constructive Anatomy) -->
-        <article class="gallery-card" data-full="images/fulls/plate-02.svg" 
-                 data-title="Dynamic Tensegrity: Block and Wedge Armatures Under Tension" 
-                 data-desc="Year: 2026 &bull; Medium: Soft Graphite 4B/6B &bull; Surface: Heavyweight Cartridge &bull; Dimensions: 14 x 17 in. (35.6 x 43.2 cm) &bull; Reference: George Bridgman, Constructive Anatomy, The Mechanics of Form">
-          <span class="gallery-plate-badge">Plate 10 // Phase 2</span>
-          <img src="images/thumbs/plate-02.svg" alt="Plate 10: Bridgman Block and Wedge Armatures" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Bridgman Block &amp; Wedge Masses</h2>
-            <p class="gallery-item-desc">Soft Graphite 4B/6B &bull; 14 x 17 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 11 (Slot: Andrew Loomis Mannikin Proportions) -->
-        <article class="gallery-card" data-full="images/fulls/plate-02.svg" 
-                 data-title="Eight-Head Mannikin Frame &amp; Gravitational Balance" 
-                 data-desc="Year: 2026 &bull; Medium: Leadholder 2mm HB &bull; Surface: Bristol Board &bull; Dimensions: 14 x 17 in. (35.6 x 43.2 cm) &bull; Reference: Andrew Loomis, Figure Drawing for All It's Worth, Proportions">
-          <span class="gallery-plate-badge">Plate 11 // Phase 2</span>
-          <img src="images/thumbs/plate-02.svg" alt="Plate 11: Loomis Mannikin Proportions" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Loomis 8-Head Mannikin Proportions</h2>
-            <p class="gallery-item-desc">Leadholder 2mm HB &bull; 14 x 17 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 12 (Slot: Andrew Loomis Head & Hands) -->
-        <article class="gallery-card" data-full="images/fulls/plate-03.svg" 
-                 data-title="Ball-and-Plane Construction of the Cranium &amp; Facial Facets" 
-                 data-desc="Year: 2026 &bull; Medium: Graphite 2B &bull; Surface: Strathmore 400 &bull; Dimensions: 11 x 14 in. (27.9 x 35.6 cm) &bull; Reference: Andrew Loomis, Drawing the Head and Hands">
-          <span class="gallery-plate-badge">Plate 12 // Phase 2</span>
-          <img src="images/thumbs/plate-03.svg" alt="Plate 12: Loomis Ball-and-Plane Head" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Loomis Ball-and-Plane Head Method</h2>
-            <p class="gallery-item-desc">Graphite 2B &bull; 11 x 14 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 13 (Slot: Arthur Wesley Dow Notan) -->
-        <article class="gallery-card" data-full="images/fulls/plate-03.svg" 
-                 data-title="Notan Studies: Two-Value Flat Massing &amp; Space Subdivision" 
-                 data-desc="Year: 2026 &bull; Medium: India Ink on Vellum &bull; Surface: 100% Cotton Rag Vellum &bull; Dimensions: 9 x 12 in. (22.9 x 30.5 cm) &bull; Reference: Arthur Wesley Dow, Composition, Notan Principles">
-          <span class="gallery-plate-badge">Plate 13 // Phase 3</span>
-          <img src="images/thumbs/plate-03.svg" alt="Plate 13: Arthur Wesley Dow Notan Studies" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Two-Value Notan Space Subdivision</h2>
-            <p class="gallery-item-desc">India Ink on Vellum &bull; 9 x 12 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 14 (Slot: Walter Crane Line and Form) -->
-        <article class="gallery-card" data-full="images/fulls/plate-01.svg" 
-                 data-title="Rhythmic Line Weight &amp; Expressive Boundary Contours" 
-                 data-desc="Year: 2026 &bull; Medium: Dip Pen &amp; Waterproof Ink &bull; Surface: Hot Press Paper &bull; Dimensions: 11 x 14 in. (27.9 x 35.6 cm) &bull; Reference: Walter Crane, Line and Form, Expressive Quality">
-          <span class="gallery-plate-badge">Plate 14 // Phase 3</span>
-          <img src="images/thumbs/plate-01.svg" alt="Plate 14: Walter Crane Rhythmic Line Weight" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Rhythmic Line Weight Hierarchy</h2>
-            <p class="gallery-item-desc">Dip Pen &amp; Waterproof Ink &bull; 11 x 14 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 15 (Slot: Elements of Ornament) -->
-        <article class="gallery-card" data-full="images/fulls/plate-01.svg" 
-                 data-title="Geometric Border Conventionalization &amp; Repeating Friezes" 
-                 data-desc="Year: 2026 &bull; Medium: Technical Pens 0.3 &amp; 0.5mm &bull; Surface: Vellum &bull; Dimensions: 12 x 18 in. (30.5 x 45.7 cm) &bull; Reference: Elements of Ornament, I.C.S. Reference Library">
-          <span class="gallery-plate-badge">Plate 15 // Phase 3</span>
-          <img src="images/thumbs/plate-01.svg" alt="Plate 15: Geometric Border Conventionalization" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Ornament Conventionalization &amp; Borders</h2>
-            <p class="gallery-item-desc">Technical Pens on Vellum &bull; 12 x 18 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 16 (Slot: Andrew Loomis Creative Illustration) -->
-        <article class="gallery-card" data-full="images/fulls/plate-03.svg" 
-                 data-title="Pictorial Staging &amp; Four-Value Key Arrangements" 
-                 data-desc="Year: 2026 &bull; Medium: Carbon &amp; Graphite Wash &bull; Surface: Heavyweight Bristol &bull; Dimensions: 14 x 18 in. (35.6 x 45.7 cm) &bull; Reference: Andrew Loomis, Creative Illustration, Value Schemes">
-          <span class="gallery-plate-badge">Plate 16 // Phase 3</span>
-          <img src="images/thumbs/plate-03.svg" alt="Plate 16: Loomis Value Key Arrangements" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Loomis Four-Value Staging Scheme</h2>
-            <p class="gallery-item-desc">Carbon &amp; Graphite Wash &bull; 14 x 18 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 17 (Slot: Arthur L. Guptill Pen and Ink) -->
-        <article class="gallery-card" data-full="images/fulls/plate-01.svg" 
-                 data-title="Architectural Cross-Hatching &amp; Directional Pen Values" 
-                 data-desc="Year: 2026 &bull; Medium: Crowquill Pen &amp; India Ink &bull; Surface: 2-Ply Plate Finish Bristol &bull; Dimensions: 12 x 16 in. (30.5 x 40.6 cm) &bull; Reference: Arthur L. Guptill, Rendering in Pen and Ink">
-          <span class="gallery-plate-badge">Plate 17 // Phase 4</span>
-          <img src="images/thumbs/plate-01.svg" alt="Plate 17: Guptill Pen and Ink Cross-Hatching" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Directional Pen Hatching on Vellum</h2>
-            <p class="gallery-item-desc">Crowquill Pen &amp; India Ink &bull; 12 x 16 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 18 (Slot: Charles D. Maginnis Economy of Method) -->
-        <article class="gallery-card" data-full="images/fulls/plate-02.svg" 
-                 data-title="Line Economy &amp; Photo-Mechanical Reproduction Discipline" 
-                 data-desc="Year: 2026 &bull; Medium: Gillott 303 Nib on Bristol &bull; Surface: Plate Bristol &bull; Dimensions: 10 x 14 in. (25.4 x 35.6 cm) &bull; Reference: Charles D. Maginnis, Pen Drawing">
-          <span class="gallery-plate-badge">Plate 18 // Phase 4</span>
-          <img src="images/thumbs/plate-02.svg" alt="Plate 18: Maginnis Line Economy" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Maginnis Economy of Line Exercise</h2>
-            <p class="gallery-item-desc">Gillott 303 Nib on Plate &bull; 10 x 14 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 19 (Slot: Koos Eissen Industrial Design Drafting) -->
-        <article class="gallery-card" data-full="images/fulls/plate-01.svg" 
-                 data-title="Industrial Design Box Grids &amp; Freehand Overpass Linework" 
-                 data-desc="Year: 2026 &bull; Medium: 0.3mm Pigment Fineliner &bull; Surface: Marker Bond 75g &bull; Dimensions: 11 x 17 in. (27.9 x 43.2 cm) &bull; Reference: Koos Eissen &amp; Roselien Steur, Sketching - The Basics">
-          <span class="gallery-plate-badge">Plate 19 // Phase 5</span>
-          <img src="images/thumbs/plate-01.svg" alt="Plate 19: Industrial Design Box Grids" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Industrial Design Perspective Grids</h2>
-            <p class="gallery-item-desc">Fineliner 0.3mm on Bond &bull; 11 x 17 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 20 (Slot: Eissen & Steur Marker Workflows) -->
-        <article class="gallery-card" data-full="images/fulls/plate-03.svg" 
-                 data-title="Fineliner, Neutral Grey Alcohol Markers &amp; Pastel Accents" 
-                 data-desc="Year: 2026 &bull; Medium: Alcohol Ink Markers &amp; Opaque White &bull; Surface: Bleed-proof Marker Paper &bull; Dimensions: 11 x 17 in. (27.9 x 43.2 cm) &bull; Reference: Koos Eissen &amp; Roselien Steur, Sketching - Drawing Techniques">
-          <span class="gallery-plate-badge">Plate 20 // Phase 5</span>
-          <img src="images/thumbs/plate-03.svg" alt="Plate 20: Marker Studio Workflow" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Alcohol Marker Studio Rendering</h2>
-            <p class="gallery-item-desc">Alcohol Inks &amp; White Gouache &bull; 11 x 17 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 21 (Slot: Scott Robertson Curved Reflections) -->
-        <article class="gallery-card" data-full="images/fulls/plate-03.svg" 
-                 data-title="Curved Surface Light Physics, Ambient Occlusion &amp; Specular Core" 
-                 data-desc="Year: 2026 &bull; Medium: Alcohol Markers, Fineliner &amp; Pencil &bull; Surface: Marker Paper &bull; Dimensions: 12 x 18 in. (30.5 x 45.7 cm) &bull; Reference: Scott Robertson, How to Render, Ch. 6">
-          <span class="gallery-plate-badge">Plate 21 // Phase 5</span>
-          <img src="images/thumbs/plate-03.svg" alt="Plate 21: Robertson Curved Reflections" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Curved Reflectivity &amp; Ambient Occlusion</h2>
-            <p class="gallery-item-desc">Mixed Media on Marker Bond &bull; 12 x 18 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 22 (Slot: Ronald B. Kemnitzer Material Rendering) -->
-        <article class="gallery-card" data-full="images/fulls/plate-01.svg" 
-                 data-title="Material Rendering Physics: Cast Metal, Smoked Glass &amp; Polished Plastic" 
-                 data-desc="Year: 2026 &bull; Medium: Alcohol Dye Inks &amp; Prismacolor Pencil &bull; Surface: Marker Vellum &bull; Dimensions: 11 x 14 in. (27.9 x 35.6 cm) &bull; Reference: Ronald B. Kemnitzer, Rendering with Markers">
-          <span class="gallery-plate-badge">Plate 22 // Phase 5</span>
-          <img src="images/thumbs/plate-01.svg" alt="Plate 22: Kemnitzer Material Rendering" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Cast Metal &amp; Glass Marker Physics</h2>
-            <p class="gallery-item-desc">Alcohol Inks &amp; Colored Pencil &bull; 11 x 14 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 23 (Slot: Anson K. Cross Mechanical Projections) -->
-        <article class="gallery-card" data-full="images/fulls/plate-01.svg" 
-                 data-title="Three-View Orthographic Projection of Machine Bracket" 
-                 data-desc="Year: 2026 &bull; Medium: 4H Technical Pencil &amp; Inked Dividers &bull; Surface: Transparent Drafting Vellum &bull; Dimensions: 18 x 24 in. (45.7 x 61.0 cm) &bull; Reference: Anson K. Cross, Mechanical Drawing">
-          <span class="gallery-plate-badge">Plate 23 // Phase 6</span>
-          <img src="images/thumbs/plate-01.svg" alt="Plate 23: Cross Orthographic Projections" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Three-View Orthographic Machine Bracket</h2>
-            <p class="gallery-item-desc">4H Lead &amp; Technical Pen on Vellum &bull; 18 x 24 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 24 (Slot: Giesecke Technical Drawing 7th Ed Auxiliary View) -->
-        <article class="gallery-card" data-full="images/fulls/plate-01.svg" 
-                 data-title="Primary Auxiliary Projection &amp; True Surface Inscription" 
-                 data-desc="Year: 2026 &bull; Medium: 0.35mm Technical Pen &bull; Surface: Drafting Vellum &bull; Dimensions: 18 x 24 in. (45.7 x 61.0 cm) &bull; Reference: Giesecke et al., Technical Drawing 7th Edition, Ch. 8">
-          <span class="gallery-plate-badge">Plate 24 // Phase 6</span>
-          <img src="images/thumbs/plate-01.svg" alt="Plate 24: Auxiliary Projection" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Primary Auxiliary View &amp; True Inscription</h2>
-            <p class="gallery-item-desc">Technical Pen on Vellum &bull; 18 x 24 in. (2026)</p>
-          </div>
-        </article>
-
-        <!-- Plate 25 (Slot: Machine Drawing Exploded Assembly) -->
-        <article class="gallery-card" data-full="images/fulls/plate-01.svg" 
-                 data-title="Isometric Exploded Gearbox Assembly with Sectioned Cutaways" 
-                 data-desc="Year: 2026 &bull; Medium: Technical Pens 0.18 to 0.70mm &bull; Surface: 100% Rag Drafting Vellum &bull; Dimensions: 24 x 36 in. (61.0 x 91.4 cm) &bull; Reference: K.L. Narayana et al., Machine Drawing, Assembly Drawings">
-          <span class="gallery-plate-badge">Plate 25 // Phase 6</span>
-          <img src="images/thumbs/plate-01.svg" alt="Plate 25: Exploded Gearbox Assembly" loading="lazy" />
-          <div class="gallery-overlay">
-            <h2 class="gallery-item-title">Exploded Gearbox Assembly &amp; Sections</h2>
-            <p class="gallery-item-desc">Technical Pens on Rag Vellum &bull; 24 x 36 in. (2026)</p>
-          </div>
-        </article>
-
-      </div>
-
-      <!-- Instructions on replacing placeholders with real physical scans -->
-      <div class="gallery-scan-hint" style="margin-top: 4rem;">
-        <h3 style="color: var(--accent); font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: uppercase; font-family: var(--font-mono); letter-spacing: 0.05em;">
-          How to Update Plates During Your Journey
-        </h3>
-        <p style="margin-bottom: 0.75rem;">
-          Each card above is calibrated with exact metadata attributes: <code>data-full</code>, <code>data-title</code>, and <code>data-desc</code> (Year, Medium, Surface, Dimensions, and Book Reference).
-        </p>
-        <p>
-          When you scan a new drawing from your board, save the high-res file to <code>images/fulls/plate-XX.jpg</code> and thumbnail to <code>images/thumbs/plate-XX.jpg</code>, then update the card's <code>src</code> and <code>data-full</code> in <code>gallery.html</code>. The lightbox will instantly display your hand-drawn piece full-screen.
-        </p>
+        <!--
+          Template for adding static image files directly in HTML:
+          <article class="gallery-card" tabindex="0"
+                   data-full="images/fulls/your-image.jpg"
+                   data-title="Your Plate Title"
+                   data-desc="Graphite on Bristol • 11 x 14 in.">
+            <span class="gallery-plate-badge">Plate 01 // Phase 1</span>
+            <button type="button" class="gallery-zoom-btn" aria-label="View full-page rendering" title="View full-page rendering">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3l2.3 2.3-2.89 2.87 1.42 1.42L18.7 6.7 21 9V3h-6zM3 9l2.3-2.3 2.87 2.89 1.42-1.42L6.7 5.3 9 3H3v6zm6 12l-2.3-2.3 2.89-2.87-1.42-1.42L5.3 17.3 3 15v6h6zm12-6l-2.3 2.3-2.87-2.89-1.42 1.42 2.89 2.87L15 21h6v-6z"/></svg>
+            </button>
+            <img src="images/thumbs/your-image.jpg" alt="Your Plate Title" loading="lazy" />
+            <div class="gallery-overlay">
+              <h2 class="gallery-item-title">Your Plate Title</h2>
+              <p class="gallery-item-desc">Graphite on Bristol • 11 x 14 in.</p>
+            </div>
+          </article>
+        -->
       </div>
 
     </div>
@@ -435,15 +199,15 @@
     </div>
   </aside>
 
-  <!-- Vanilla Lightbox Modal -->
-  <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Image Lightbox">
-    <button type="button" id="lightbox-close" class="lightbox-btn lightbox-close" aria-label="Close Lightbox">
+  <!-- Full-Page Lightbox Modal -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Full-Page Image Viewer">
+    <button type="button" id="lightbox-close" class="lightbox-btn lightbox-close" aria-label="Close Full-Page View" title="Close (Esc)">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
     </button>
-    <button type="button" id="lightbox-prev" class="lightbox-btn lightbox-prev" aria-label="Previous Image">
+    <button type="button" id="lightbox-prev" class="lightbox-btn lightbox-prev" aria-label="Previous Image" title="Previous Image">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
     </button>
-    <button type="button" id="lightbox-next" class="lightbox-btn lightbox-next" aria-label="Next Image">
+    <button type="button" id="lightbox-next" class="lightbox-btn lightbox-next" aria-label="Next Image" title="Next Image">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
     </button>
     <div class="lightbox-content">
