@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The 22-Book Curriculum &mdash; Den of the Draftsman</title>
+  <meta name="description" content="A complete 6-phase classical syllabus for mastering drawing, perspective, anatomy, ink rendering, and industrial design from ground zero across 22 master texts." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ======================================================================
+       Site Header & Main Navigation Bar
+       ====================================================================== -->
+  <header id="site-header">
+    <div class="brand-wrapper">
+      <a href="index.html" class="brand-title">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2a2 2 0 0 0-2 2c0 .38.11.74.3 1.05L4.5 19.5a1 1 0 0 0 1.8.88L9.2 13h5.6l2.9 7.38a1 1 0 0 0 1.8-.88L13.7 5.05c.19-.31.3-.67.3-1.05a2 2 0 0 0-2-2zm0 2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 7 2-5.08 2 5.08h-4z"/>
+        </svg>
+        Den of the Draftsman
+      </a>
+      <span class="brand-tagline">&mdash; Zero to Mastery in Traditional Drafting</span>
+    </div>
+
+    <nav aria-label="Main Navigation">
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="gallery.html" class="nav-link">Selected Works</a></li>
+        <li><a href="curriculum.html" class="nav-link active">Curriculum</a></li>
+        <li><a href="resources.html" class="nav-link">Resources</a></li>
+        <li><a href="dictionary.html" class="nav-link">Lexicon</a></li>
+        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        <li>
+          <a href="https://www.youtube.com/@denofthedraftsman" target="_blank" rel="noopener noreferrer" class="nav-link icon-only" title="YouTube" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.376.55 9.376.55s7.505 0 9.377-.55a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.twitch.tv/denofthedraftsman" target="_blank" rel="noopener noreferrer" class="nav-link icon-only" title="Twitch" aria-label="Twitch">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://x.com/denofdraftsman" target="_blank" rel="noopener noreferrer" class="nav-link icon-only" title="Twitter / X" aria-label="Twitter / X">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/denofthedraftsman" target="_blank" rel="noopener noreferrer" class="nav-link icon-only" title="Instagram" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.patreon.com/profile/creators?u=231767646" target="_blank" rel="noopener noreferrer" class="nav-link icon-only" title="Patreon" aria-label="Patreon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.386.5C9.645.5 5 5.146 5 10.887c0 5.688 4.645 10.334 10.386 10.334 5.688 0 10.334-4.646 10.334-10.334C25.72 5.146 21.074.5 15.386.5zM0 23.5h4.15V.5H0z"/></svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ======================================================================
+       Main Content Area: 22-Book Curriculum
+       ====================================================================== -->
+  <main id="main-content">
+    <div class="container" style="padding-top: 4rem; padding-bottom: 5rem;">
+
+      <!-- Header -->
+      <div class="section-header">
+        <span class="section-tag">The 22-Text Syllabus</span>
+        <h1 class="section-title">The Master Curriculum</h1>
+        <p class="section-desc">
+          A sequenced, rigorous study path: moving from 1- and 2-point perspective grids, contour sighting, and graphite physics, to dynamic anatomy, Notan space composition, permanent ink on vellum, alcohol markers, and engineering projection standards.
+        </p>
+      </div>
+
+      <!-- Phase Filter Buttons -->
+      <div class="phase-filters" role="tablist" aria-label="Filter phases">
+        <button type="button" class="filter-btn active" data-phase="all">All Phases (22 Texts)</button>
+        <button type="button" class="filter-btn" data-phase="phase-1">Phase 1: Perspective &amp; Form</button>
+        <button type="button" class="filter-btn" data-phase="phase-2">Phase 2: Graphite &amp; Anatomy</button>
+        <button type="button" class="filter-btn" data-phase="phase-3">Phase 3: Composition &amp; Design</button>
+        <button type="button" class="filter-btn" data-phase="phase-4">Phase 4: Pen &amp; Ink</button>
+        <button type="button" class="filter-btn" data-phase="phase-5">Phase 5: Alcohol Markers</button>
+        <button type="button" class="filter-btn" data-phase="phase-6">Phase 6: Precision Drafting</button>
+      </div>
+
+      <!-- Curriculum Phase Blocks -->
+      <div class="curriculum-phases">
+
+        <!-- PHASE 1 -->
+        <div class="phase-group" id="phase-1" data-phase="phase-1">
+          <div class="phase-header-card">
+            <div class="phase-header-info">
+              <h3>Phase 1: Foundational Drawing, Form, and Perspective</h3>
+              <p>Before mastering ink lines or marker values, you must master how to place 3D volumes into space accurately.</p>
+            </div>
+            <span class="phase-badge-pill">Texts 01 &ndash; 05</span>
+          </div>
+
+          <div class="books-grid">
+            
+            <article class="book-card in-progress">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">01 / 22</span>
+                  <span class="book-status in-progress">Active Study</span>
+                </div>
+                <h4 class="book-title">Perspective Made Easy</h4>
+                <div class="book-author">by Ernest R. Norling</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why First</span>
+                  <p class="book-why-text">Provides the absolute simplest visual rules for 1- and 2-point perspective, rotating boxes, cylinders, and inclined planes, establishing the structural grid needed for everything else.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">1- &amp; 2-Point Grids</span>
+                <span class="book-tag">Box Rotations</span>
+                <span class="book-tag">Inclined Planes</span>
+                <span class="book-tag">Eye Level</span>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">02 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">The Practice and Science of Drawing</h4>
+                <div class="book-author">by Harold Speed</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Second</span>
+                  <p class="book-why-text">Bridges flat outlines and 3D form, teaching you how to "sight" proportions, perceive true contours, and balance mass versus line.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Sight-Size</span>
+                <span class="book-tag">Plumb Lines</span>
+                <span class="book-tag">Mass vs. Line</span>
+                <span class="book-tag">True Contours</span>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">03 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">Practical Drawing</h4>
+                <div class="book-author">by Edwin G. Lutz</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Third</span>
+                  <p class="book-why-text">Reinforces basic polygon construction and breaking complex manufactured objects down into primitive shapes.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Primitive Polygons</span>
+                <span class="book-tag">Geometric Decomposition</span>
+                <span class="book-tag">Synthetic Form</span>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">04 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">The Elements of Drawing</h4>
+                <div class="book-author">by John Ruskin</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Fourth</span>
+                  <p class="book-why-text">A classic guide that trains the eye to see accurately through strict, patient observation of nature and tonal gradations.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Patience of Sight</span>
+                <span class="book-tag">Tonal Gradation</span>
+                <span class="book-tag">Natural Forms</span>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">05 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">How to Draw</h4>
+                <div class="book-author">by Scott Robertson with Thomas Bertling</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Fifth</span>
+                  <p class="book-why-text">Bridges classical perspective into advanced, modern object construction, teaching you how to build complex manufactured forms, wheels, cutaways, and environments freehand from any angle.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Freehand Grids</span>
+                <span class="book-tag">Ellipses in Space</span>
+                <span class="book-tag">Cutaways</span>
+                <span class="book-tag">Manufactured Forms</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- PHASE 2 -->
+        <div class="phase-group" id="phase-2" data-phase="phase-2">
+          <div class="phase-header-card">
+            <div class="phase-header-info">
+              <h3>Phase 2: Mastering Graphite, Pencil, and Anatomy</h3>
+              <p>Deepening technical control over line quality, value scales, and organic human structure.</p>
+            </div>
+            <span class="phase-badge-pill">Texts 06 &ndash; 12</span>
+          </div>
+
+          <div class="books-grid">
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">06 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">Light and Shade</h4>
+                <div class="book-author">by Anson K. Cross</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Sixth</span>
+                  <p class="book-why-text">Teaches the physics of light on forms (highlights, half-lights, core shadows, reflected light, and cast shadows) and introduces value tests.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Core Shadow / Terminator</span>
+                <span class="book-tag">Reflected Light</span>
+                <span class="book-tag">Value Tests</span>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">07 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">Sketching and Rendering in Pencil (Ch. 1&ndash;3)</h4>
+                <div class="book-author">by Arthur L. Guptill (1922 Complete Edition)</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Seventh</span>
+                  <p class="book-why-text">Your core textbook. With chapters 1–3 finished, you can now fully integrate Guptill's foundational pencil-handling techniques with a strong grasp of perspective and form.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Pencil Handling</span>
+                <span class="book-tag">Stroke Mechanics</span>
+                <span class="book-tag">Tone Gradients</span>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">08 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">Sketching and Rendering in Pencil (Ch. 4&ndash;7)</h4>
+                <div class="book-author">by Arthur L. Guptill</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Eighth</span>
+                  <p class="book-why-text">Focuses on surface textures (wood, brick, stone, foliage) and advanced value control across architectural and natural compositions.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Architectural Texture</span>
+                <span class="book-tag">Brick &amp; Stone</span>
+                <span class="book-tag">Foliage Rendering</span>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">09 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">The Human Figure</h4>
+                <div class="book-author">by John H. Vanderpoel</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Ninth</span>
+                  <p class="book-why-text">Introduces anatomical planes, structure, and surface landmarks for figure work, establishing planar clarity on organic forms.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Anatomical Planes</span>
+                <span class="book-tag">Surface Landmarks</span>
+                <span class="book-tag">Figure Mass</span>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">10 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">Constructive Anatomy</h4>
+                <div class="book-author">by George Bridgman</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Tenth</span>
+                  <p class="book-why-text">Breaks down the human body into wedge, block, and mass systems, teaching you how bone and muscle interact dynamically under tension.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Wedge &amp; Block Masses</span>
+                <span class="book-tag">Tensegrity</span>
+                <span class="book-tag">Dynamic Interlocking</span>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">11 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">Figure Drawing for All It's Worth</h4>
+                <div class="book-author">by Andrew Loomis</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Eleventh</span>
+                  <p class="book-why-text">Connects proportions, the mannikin frame, skeletal architecture, and dynamic balance into an intuitive, flexible figure framework.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Mannikin Frame</span>
+                <span class="book-tag">8-Head Proportions</span>
+                <span class="book-tag">Dynamic Balance</span>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">12 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">Drawing the Head and Hands</h4>
+                <div class="book-author">by Andrew Loomis</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Twelfth</span>
+                  <p class="book-why-text">Expands the ball-and-plane structural method to facial planes and hand construction, allowing facial features and gestures to turn in space.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Loomis Head Method</span>
+                <span class="book-tag">Facial Planes</span>
+                <span class="book-tag">Hand Geometry</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- PHASE 3 -->
+        <div class="phase-group" id="phase-3" data-phase="phase-3">
+          <div class="phase-header-card">
+            <div class="phase-header-info">
+              <h3>Phase 3: Composition, Value Structure, &amp; Design Foundations</h3>
+              <p>Learning how to organize your page, manage massing, command visual weight, and direct the viewer's eye.</p>
+            </div>
+            <span class="phase-badge-pill">Texts 13 &ndash; 16</span>
+          </div>
+
+          <div class="books-grid">
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">13 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">Composition</h4>
+                <div class="book-author">by Arthur Wesley Dow</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Thirteenth</span>
+                  <p class="book-why-text">Teaches the fundamental structure of space-art through Dow's 5 principles (Opposition, Transition, Subordination, Repetition, Symmetry) and Notan (flat dark-and-light massing).</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Notan Massing</span>
+                <span class="book-tag">5 Dow Principles</span>
+                <span class="book-tag">Subordination</span>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">14 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">Line and Form</h4>
+                <div class="book-author">by Walter Crane</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Fourteenth</span>
+                  <p class="book-why-text">Explores the psychological and expressive qualities of line weight, decorative rhythm, and structural boundary contour.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Expressive Line</span>
+                <span class="book-tag">Rhythm &amp; Contour</span>
+                <span class="book-tag">Decorative Unity</span>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">15 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">Elements of Ornament</h4>
+                <div class="book-author">I.C.S. Reference Library</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Fifteenth</span>
+                  <p class="book-why-text">Teaches conventionalization, surface decoration, geometric border construction, and natural ornament classification.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Conventionalization</span>
+                <span class="book-tag">Surface Decoration</span>
+                <span class="book-tag">Geometric Borders</span>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">16 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">Creative Illustration</h4>
+                <div class="book-author">by Andrew Loomis</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Sixteenth</span>
+                  <p class="book-why-text">Unifies Dow's space-design principles into commercial storytelling, staging, focal patterns, and rigorous value keys.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Value Keys</span>
+                <span class="book-tag">Visual Staging</span>
+                <span class="book-tag">Pictorial Storytelling</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- PHASE 4 -->
+        <div class="phase-group" id="phase-4" data-phase="phase-4">
+          <div class="phase-header-card">
+            <div class="phase-header-info">
+              <h3>Phase 4: Pen &amp; Ink Rendering</h3>
+              <p>Moving from soft, forgiving graphite to crisp, permanent ink lines, tonal hatching, and technical pen discipline.</p>
+            </div>
+            <span class="phase-badge-pill">Texts 17 &ndash; 18</span>
+          </div>
+
+          <div class="books-grid">
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">17 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">Rendering in Pen and Ink</h4>
+                <div class="book-author">by Arthur L. Guptill</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Seventeenth</span>
+                  <p class="book-why-text">The definitive foundational text for architectural and pictorial pen technique, stroke direction, nib mechanics, and tonal value building.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Cross-Hatching</span>
+                <span class="book-tag">Nib Direction</span>
+                <span class="book-tag">Architectural Ink</span>
+                <span class="book-tag">Vellum Drafting</span>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">18 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">Pen Drawing</h4>
+                <div class="book-author">by Charles D. Maginnis</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Eighteenth</span>
+                  <p class="book-why-text">Teaches individual line quality, variety, economy of method, and handling process reproduction constraints with absolute clarity.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Economy of Line</span>
+                <span class="book-tag">Process Reproduction</span>
+                <span class="book-tag">Weight Variety</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- PHASE 5 -->
+        <div class="phase-group" id="phase-5" data-phase="phase-5">
+          <div class="phase-header-card">
+            <div class="phase-header-info">
+              <h3>Phase 5: Alcohol Markers &amp; Industrial Design Rendering</h3>
+              <p>Mastering professional marker workflows, rapid concept visualization, light physics, and mixed-media finishing.</p>
+            </div>
+            <span class="phase-badge-pill">Texts 19 &ndash; 22</span>
+          </div>
+
+          <div class="books-grid">
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">19 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">Sketching: The Basics</h4>
+                <div class="book-author">by Koos Eissen &amp; Roselien Steur</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Nineteenth</span>
+                  <p class="book-why-text">Focuses on foundational industrial design drafting: freehand perspective grids, ellipse construction, and linework hierarchy.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Industrial Drafting</span>
+                <span class="book-tag">Ellipse Construction</span>
+                <span class="book-tag">Linework Hierarchy</span>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">20 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">Sketching: Drawing Techniques for Product Designers</h4>
+                <div class="book-author">by Koos Eissen &amp; Roselien Steur</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Twentieth</span>
+                  <p class="book-why-text">Teaches the complete studio workflow combining fineliners, alcohol markers, pastel dust, and opaque white highlights.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Mixed Media</span>
+                <span class="book-tag">Fineliner + Marker</span>
+                <span class="book-tag">Highlight Rendering</span>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">21 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">How to Render</h4>
+                <div class="book-author">by Scott Robertson with Thomas Bertling</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Twenty-First</span>
+                  <p class="book-why-text">Deeply analyzes the optical math and geometric construction of cast shadows, ambient occlusion, specular highlights, and reflections on complex curved surfaces.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Optical Math</span>
+                <span class="book-tag">Ambient Occlusion</span>
+                <span class="book-tag">Curved Reflections</span>
+                <span class="book-tag">Fresnel Effect</span>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">22 / 22</span>
+                  <span class="book-status upcoming">Upcoming</span>
+                </div>
+                <h4 class="book-title">Rendering with Markers</h4>
+                <div class="book-author">by Ronald B. Kemnitzer</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Why Twenty-Second</span>
+                  <p class="book-why-text">Provides tactile mechanics on alcohol ink physics, paper bleed behavior, streak-free gradients, and material rendering (metal, glass, plastic).</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Streak-Free Gradients</span>
+                <span class="book-tag">Solvent Bleed Physics</span>
+                <span class="book-tag">Glass &amp; Metal</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- PHASE 6 -->
+        <div class="phase-group" id="phase-6" data-phase="phase-6">
+          <div class="phase-header-card">
+            <div class="phase-header-info">
+              <h3>Phase 6: Precision Drafting &amp; Technical Reference</h3>
+              <p>Consult these technical reference manuals alongside creative studio work for engineering precision and exact geometric projection.</p>
+            </div>
+            <span class="phase-badge-pill">4 Reference Manuals</span>
+          </div>
+
+          <div class="books-grid">
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">REF // 01</span>
+                  <span class="book-status reference">Active Reference</span>
+                </div>
+                <h4 class="book-title">Mechanical Drawing</h4>
+                <div class="book-author">by Anson K. Cross</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Scope &amp; Utility</span>
+                  <p class="book-why-text">Orthographic projections, geometric construction problems, working drawings, and classic mechanical drawing instruments.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Orthographic Projections</span>
+                <span class="book-tag">Geometric Problems</span>
+                <span class="book-tag">Working Drawings</span>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">REF // 02</span>
+                  <span class="book-status reference">Active Reference</span>
+                </div>
+                <h4 class="book-title">Technical Drawing (7th Edition)</h4>
+                <div class="book-author">by Giesecke, Hill, Spencer, Dygdon, Novak, and Lockhart</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Scope &amp; Utility</span>
+                  <p class="book-why-text">Comprehensive manual for modern engineering drawing standards, multiview projection, auxiliary views, dimensioning, and sectioning conventions.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Multiview Projection</span>
+                <span class="book-tag">Auxiliary Views</span>
+                <span class="book-tag">Dimensioning Standards</span>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">REF // 03</span>
+                  <span class="book-status reference">Active Reference</span>
+                </div>
+                <h4 class="book-title">Machine Drawing</h4>
+                <div class="book-author">by K.L. Narayana et al.</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Scope &amp; Utility</span>
+                  <p class="book-why-text">Advanced dimensioning, sectional conventions, fasteners, bearings, exploded assemblies, and industrial manufacturing standards.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Sectional Conventions</span>
+                <span class="book-tag">Exploded Assemblies</span>
+                <span class="book-tag">Industrial Standards</span>
+              </div>
+            </article>
+
+            <article class="book-card">
+              <div>
+                <div class="book-top-bar">
+                  <span class="book-seq">REF // 04</span>
+                  <span class="book-status reference">Active Reference</span>
+                </div>
+                <h4 class="book-title">Color Study</h4>
+                <div class="book-author">by Anson K. Cross</div>
+                <div class="book-why-box">
+                  <span class="book-why-label">Scope &amp; Utility</span>
+                  <p class="book-why-text">Academic color theory, complementary pigment relationships, and simultaneous optical contrast for traditional palettes.</p>
+                </div>
+              </div>
+              <div class="book-tags">
+                <span class="book-tag">Academic Color Theory</span>
+                <span class="book-tag">Complementary Values</span>
+                <span class="book-tag">Simultaneous Contrast</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

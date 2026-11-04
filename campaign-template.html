@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campaign Template &mdash; Den of the Draftsman</title>
+  <meta name="description" content="Reusable high-conversion campaign and lead magnet landing page template for Den of the Draftsman." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Campaign-specific focused layout */
+    .campaign-wrap {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+    }
+    .campaign-card {
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 3rem 2.5rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .campaign-benefit-list {
+      list-style: none;
+      margin: 1.75rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .campaign-benefit-list li {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      color: var(--text-main);
+      font-size: 0.95rem;
+    }
+    .campaign-benefit-list svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: var(--accent);
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+    .campaign-footer-nav {
+      margin-top: 3rem;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      font-size: 0.8rem;
+    }
+    .campaign-footer-nav a {
+      color: var(--text-dim);
+    }
+    .campaign-footer-nav a:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Minimal Brand Header (No distracting exit navigation) -->
+  <header style="padding: 1.5rem; text-align: center; border-bottom: 1px solid var(--border); background: var(--bg-header);">
+    <a href="index.html" class="brand-title" style="justify-content: center;">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="var(--accent)" aria-hidden="true">
+        <path d="M12 2a2 2 0 0 0-2 2c0 .38.11.74.3 1.05L4.5 19.5a1 1 0 0 0 1.8.88L9.2 13h5.6l2.9 7.38a1 1 0 0 0 1.8-.88L13.7 5.05c.19-.31.3-.67.3-1.05a2 2 0 0 0-2-2zm0 2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 7 2-5.08 2 5.08h-4z"/>
+      </svg>
+      Den of the Draftsman
+    </a>
+  </header>
+
+  <main id="main-content">
+    <div class="campaign-wrap">
+      <div class="campaign-card">
+        
+        <!-- Campaign Eyebrow & Title -->
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <span class="status-pill">[CAMPAIGN EYEBROW: E.G. FREE STUDY GUIDE]</span>
+          <h1 style="font-size: 2rem; font-weight: 800; color: var(--text-main); line-height: 1.25; margin-top: 0.5rem; margin-bottom: 0.75rem;">
+            [Campaign Headline: What the Visitor Gets]
+          </h1>
+          <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6;">
+            [Subheadline explaining the specific practical value of this guide, workshop, or lead magnet].
+          </p>
+        </div>
+
+        <!-- Value Bullet Points -->
+        <ul class="campaign-benefit-list">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+            <span><strong>Core Takeaway 1:</strong> Specific technique or concept covered in detail.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+            <span><strong>Core Takeaway 2:</strong> Step-by-step drafting layout diagram or printable checklist.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+            <span><strong>Core Takeaway 3:</strong> Direct reference to curriculum milestones and exercise plates.</span>
+          </li>
+        </ul>
+
+        <!-- Conversion Form -->
+        <form id="campaign-form" class="contact-form" method="post" action="thank-you.html" style="margin-top: 2rem;">
+          <div class="form-group">
+            <input type="text" name="name" class="form-control" placeholder="Your First Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" class="form-control" placeholder="Your Email Address" required />
+          </div>
+          <button type="submit" class="btn-primary" style="width: 100%; text-align: center; padding: 0.9rem; font-size: 0.95rem;">
+            Get Free Access Now &rarr;
+          </button>
+          <p style="font-size: 0.75rem; color: var(--text-dim); text-align: center; margin-top: 0.5rem;">
+            Zero spam. Unsubscribe at any time. Respecting your privacy.
+          </p>
+        </form>
+
+      </div>
+
+      <!-- Minimal Footer -->
+      <footer class="campaign-footer-nav">
+        <a href="index.html">Main Website</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </footer>
+    </div>
+  </main>
+
+</body>
+</html>

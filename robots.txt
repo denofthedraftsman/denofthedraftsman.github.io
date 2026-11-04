@@ -83,7 +83,9 @@ User-agent: DuckDuckBot
 Allow: /
 
 # ------------------------------------------------------------------------------
-# Global Default
+# Global Default & XML Sitemap
 # ------------------------------------------------------------------------------
 User-agent: *
 Allow: /
+
+Sitemap: https://denofthedraftsman.com/sitemap.xml
